@@ -30,11 +30,7 @@ export function AeroWindow({
     >
       {/* Titlebar */}
       <div
-        className="flex h-8 items-center gap-1.5 border-b border-blue-300/40 px-2.5"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(190,225,255,0.75) 40%, rgba(140,200,255,0.65) 60%, rgba(160,215,255,0.70) 100%)",
-        }}
+        className="flex h-8 items-center gap-1.5 border-b border-blue-300/40 px-2.5 bg-gradient-blue"
       >
         {icon && <span className="text-sm">{icon}</span>}
         <span className="text-[11px] font-bold text-blue-900 [text-shadow:0_1px_0_rgba(255,255,255,0.8)]">

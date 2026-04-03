@@ -14,17 +14,18 @@ import { useState } from "react";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>("home");
+  const [isOpen, setIsOpen] = useState(false);
 
   const renderTab = () => {
     switch (activeTab) {
       case "home":
         return <HomeTab onTabChange={setActiveTab} />;
       case "projects":
-      return <ProjectsTab />;
+        return <ProjectsTab />;
       case "skills":
-      return <SkillsTab />;
+        return <SkillsTab />;
       case "contact":
-      return <ContactTab />;
+        return <ContactTab />;
     }
   };
   return (
@@ -35,21 +36,26 @@ export default function Home() {
         fontSize: 13,
         color: "#1a3a1a",
       }}>
-      <div className="relative z-2 mx-auto max-w-360 px-3 pb-24 pt-4">
+      <div className="relative z-2 mx-auto max-w-360 px-3 pt-4">
         {/* ── MAIN BROWSER WINDOW ── */}
         <AeroWindow
           title="My Portfolio — Windows Internet Explorer"
           icon="🌐"
           className="mb-2.5 animate-[fadeIn_0.4s_ease_both]">
-          <BrowserChrome activeTab={activeTab} onTabChange={setActiveTab} />
+          <BrowserChrome activeTab={activeTab} onTabChange={setActiveTab} setIsOpen={setIsOpen} />
 
           {/* Body */}
-          <div className="grid" style={{ gridTemplateColumns: "185px 1fr" }}>
+          <div className="flex min-h-[80svh]">
             {/* Sidebar */}
-            <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
+            <Sidebar
+              activeTab={activeTab}
+              onTabChange={setActiveTab}
+              isOpen={isOpen}
+              onClose={() => setIsOpen(false)}
+            />
 
             {/* Content */}
-            <div className="bg-white/62 p-4 backdrop-blur-sm">
+            <div className="bg-white/62 p-4 backdrop-blur-sm flex-1">
               {renderTab()}
             </div>
           </div>

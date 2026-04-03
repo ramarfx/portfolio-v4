@@ -19,7 +19,7 @@ export function ContactTab() {
     <div>
       <SectionTitle>✉ Send Me a Message</SectionTitle>
       <SectionBody>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Form */}
           <div>
             {(["name", "email", "subject"] as const).map((field) => (

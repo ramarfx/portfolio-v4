@@ -6,7 +6,7 @@ import { Tag } from "../ui/tag";
 
 export function SkillsTab() {
   return (
-    <div>
+    <div className="w-full">
       <div className="grid grid-cols-2 gap-2.5 mb-2.5">
         <div>
           <SectionTitle>🎨 Design Skills</SectionTitle>

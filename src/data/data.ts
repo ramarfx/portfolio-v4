@@ -20,6 +20,24 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: "aquashop",
+    title: "AquaShop — E-Commerce Platform",
+    description:
+      "A full-featured online store with product filtering, cart system, and payment integration. Designed with a clean, water-inspired UI theme.",
+    emoji: "🌐",
+    thumbClass: "bg-gradient-to-br from-sky-300 via-blue-500 to-blue-700",
+    tags: [
+      { label: "HTML/CSS", color: "blue" },
+      { label: "JavaScript", color: "blue" },
+      { label: "React", color: "green" },
+      { label: "UX Design", color: "aqua" },
+    ],
+    links: [
+      { label: "🔗 Live Demo", variant: "blue" },
+      { label: "⌥ GitHub", variant: "silver" },
+    ],
+  },
+  {
     id: "greenlife",
     title: "GreenLife — Mobile App UI Kit",
     description:
