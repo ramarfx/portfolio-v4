@@ -38,35 +38,57 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
               "linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%)",
           }}
         />
-        <h1
-          className="relative mb-1 font-[Trebuchet_MS,sans-serif] text-[22px] font-bold"
-          style={{
-            background: "linear-gradient(180deg, #2060d0 0%, #0a40a0 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}>
-          Ramadina Al Muzthazam
-        </h1>
-        <p className="relative mb-3 text-[12px] italic text-green-800">
-          Fullstack Web Developer
-        </p>
-        <p className="relative max-w-lg text-[12px] leading-relaxed text-blue-900">
-          Hello! I&rsquo;m a passionate Web Developer with over 3 years of
-          experience building modern, responsive, and user-friendly web
-          applications. I enjoy turning ideas into functional and scalable
-          digital products using the latest web technologies.
-        </p>
-        <div className="relative mt-3 flex flex-wrap gap-2">
-          <GlossyButton variant="blue" onClick={() => onTabChange("projects")}>
-            View Projects
-          </GlossyButton>
-          <GlossyButton variant="green" onClick={() => onTabChange("contact")}>
-            Hire Me!
-          </GlossyButton>
-          <a href="https://drive.google.com/file/d/1bh5Wf1mI2WvRlj97eXCyZl2A6e8DAlvm/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-            <GlossyButton variant="silver">📄 Download CV</GlossyButton>
-          </a>
+
+        <div className="flex flex-col-reverse md:flex-row gap-5 justify-between items-center">
+          <div className="">
+            <h1
+              className="relative mb-1 font-[Trebuchet_MS,sans-serif] text-[22px] font-bold"
+              style={{
+                background: "linear-gradient(180deg, #2060d0 0%, #0a40a0 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}>
+              Ramadina Al Muzthazam
+            </h1>
+            <p className="relative mb-3 text-[12px] italic text-green-800">
+              Fullstack Web Developer
+            </p>
+            <p className="relative max-w-lg text-[12px] leading-relaxed text-blue-900">
+              Hello! I&rsquo;m a passionate Web Developer with over 3 years of
+              experience building modern, responsive, and user-friendly web
+              applications. I enjoy turning ideas into functional and scalable
+              digital products using the latest web technologies.
+            </p>
+            <div className="relative mt-3 flex flex-wrap gap-2">
+              <GlossyButton
+                variant="blue"
+                onClick={() => onTabChange("projects")}>
+                View Projects
+              </GlossyButton>
+              <GlossyButton
+                variant="green"
+                onClick={() => onTabChange("contact")}>
+                Hire Me!
+              </GlossyButton>
+              <a
+                href="https://drive.google.com/file/d/1bh5Wf1mI2WvRlj97eXCyZl2A6e8DAlvm/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer">
+                <GlossyButton variant="silver">📄 Download CV</GlossyButton>
+              </a>
+            </div>
+          </div>
+
+          <div className="flex-1">
+            <Image
+              src="/img/decoration.png"
+              alt="Profile Picture"
+              width={120}
+              height={120}
+              className="w-80 h-auto mx-auto rounded-2xl object-cover"
+            />
+          </div>
         </div>
       </div>
 
