@@ -40,12 +40,12 @@ export default function Home() {
         {/* ── MAIN BROWSER WINDOW ── */}
         <AeroWindow
           title="My Portfolio — Windows Internet Explorer"
-          icon="🌐"
+          icon="/img/icons/edge.png"
           className="mb-2.5 animate-[fadeIn_0.4s_ease_both]">
           <BrowserChrome activeTab={activeTab} onTabChange={setActiveTab} setIsOpen={setIsOpen} />
 
           {/* Body */}
-          <div className="flex min-h-[80svh]">
+          <div className="flex min-h-[80svh] h-full">
             {/* Sidebar */}
             <Sidebar
               activeTab={activeTab}
@@ -66,7 +66,7 @@ export default function Home() {
         {/* ── INFO BAR WINDOW ── */}
         <AeroWindow
           title="Quick Info — Alex Designer's Portfolio"
-          icon="ℹ️"
+          icon="/img/icons/info.png"
           className="animate-[fadeIn_0.4s_0.08s_ease_both]">
           <div className="flex flex-wrap items-center gap-5 bg-white/50 px-3.5 py-2.5 text-[11px]">
             <span className="flex items-center gap-1.5 text-blue-700">

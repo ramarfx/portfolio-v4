@@ -6,10 +6,10 @@ import { ProjectCard } from "../project-card";
 export function ProjectsTab() {
   return (
     <div>
-      <SectionTitle>💼 My Projects</SectionTitle>
+      <SectionTitle>My Projects</SectionTitle>
       <SectionBody>
         {PROJECTS.map((p) => (
-          <ProjectCard key={p.id} project={p} />
+          <ProjectCard key={p.id} project={p} image={p.image} />
         ))}
       </SectionBody>
     </div>

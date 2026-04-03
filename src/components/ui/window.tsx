@@ -1,5 +1,6 @@
 import { cn } from "@/libs/utils";
 import WinBtn from "./window-button";
+import Image from "next/image";
 
 interface AeroWindowProps {
   title: string;
@@ -19,7 +20,7 @@ export function AeroWindow({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-[10px_10px_8px_8px]",
+        "relative rounded-[10px_10px_8px_8px]",
         "border border-white/70",
         "bg-[rgba(220,240,255,0.55)] backdrop-blur-[18px] saturate-150",
         "shadow-[0_0_0_1px_rgba(255,255,255,0.6),0_2px_4px_rgba(0,0,0,0.25),0_8px_32px_rgba(0,0,0,0.2),inset_0_0_0_1px_rgba(255,255,255,0.4)]",
@@ -30,9 +31,9 @@ export function AeroWindow({
     >
       {/* Titlebar */}
       <div
-        className="flex h-8 items-center gap-1.5 border-b border-blue-300/40 px-2.5 bg-gradient-blue"
+        className="flex h-8 overflow-hidden items-center gap-1.5 border-b border-blue-300/40 px-2.5 bg-gradient-blue rounded-[10px_10px_8px_8px]"
       >
-        {icon && <span className="text-sm">{icon}</span>}
+        {icon && <Image src={icon} alt="Window Icon" width={16} height={16} />}
         <span className="text-[11px] font-bold text-blue-900 [text-shadow:0_1px_0_rgba(255,255,255,0.8)]">
           {title}
         </span>

@@ -4,6 +4,7 @@ import { TABS } from "@/data/data";
 import type { TabId } from "@/types/types";
 import { ArrowLeft, ArrowRight, Home, RefreshCcw } from "lucide-react";
 import { GlossyButton } from "./ui/button";
+import Image from "next/image";
 
 interface BrowserChromeProps {
   activeTab: TabId;
@@ -92,6 +93,13 @@ export function BrowserChrome({ activeTab, onTabChange, setIsOpen }: BrowserChro
                   ? "z-10 border-blue-400/45 bg-linear-to-b from-white/85 to-blue-50/70 text-blue-900"
                   : "border-blue-200/35 bg-linear-to-b from-white/50 to-blue-100/30 text-blue-700 hover:bg-linear-to-b hover:from-white/65 hover:to-blue-100/40",
               ].join(" ")}>
+                <Image
+                  src={tab.icon}
+                  alt={`${tab.label} icon`}
+                  width={16}
+                  height={16}
+                  className="inline-block mr-1.5"
+                />
               {tab.label}
             </button>
           );

@@ -1,18 +1,19 @@
+import { JSX } from "react";
+
 export type TabId = "home" | "projects" | "skills" | "contact";
 
 export interface Project {
   id: string;
+  image: string;
   title: string;
   description: string;
-  emoji: string;
-  thumbClass: string;
-  tags: { label: string; color: "blue" | "green" | "aqua" }[];
+  tags: { label: string; color: "blue" | "green" | "aqua" | "yellow" }[];
   links: { label: string; variant: "blue" | "green" | "aqua" | "silver" }[];
 }
 
 export interface Skill {
   label: string;
-  percent: number;
+  level: "Beginner" | "Intermediate" | "Advanced"
   fillColor: "blue" | "green" | "aqua" | "purple";
 }
 
@@ -26,4 +27,9 @@ export interface NavItem {
 export interface StatItem {
   value: string;
   label: string;
+}
+
+export interface Tools {
+  icon: JSX.Element | string;
+  name: string;
 }

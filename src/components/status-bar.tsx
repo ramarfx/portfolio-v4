@@ -7,7 +7,6 @@ export function StatusBar() {
           "linear-gradient(180deg, rgba(200,225,255,0.7) 0%, rgba(170,205,245,0.65) 100%)",
       }}
     >
-      <span className="flex items-center gap-1">✅ Done</span>
       <span className="flex items-center gap-1">🔒 Trusted Site</span>
       <span className="flex items-center gap-1">
         🌐 Internet | Protected Mode: On
