@@ -2,7 +2,7 @@
 
 import { TABS } from "@/data/data";
 import type { TabId } from "@/types/types";
-import { ArrowLeft, ArrowRight, Home, RefreshCcw } from "lucide-react";
+import { ArrowLeft, ArrowRight, Home, Menu, RefreshCcw } from "lucide-react";
 import { GlossyButton } from "./ui/button";
 import Image from "next/image";
 
@@ -19,10 +19,6 @@ export function BrowserChrome({ activeTab, onTabChange, setIsOpen }: BrowserChro
     {
       icon: <ArrowLeft size={16} />,
       label: "Back",
-    },
-    {
-      icon: <ArrowRight size={16} />,
-      label: "Forward",
     },
     {
       icon: <RefreshCcw size={16} />,
@@ -66,9 +62,9 @@ export function BrowserChrome({ activeTab, onTabChange, setIsOpen }: BrowserChro
         <GlossyButton variant="green" className="hidden md:block px-2 py-0.5">
           Submit
         </GlossyButton>
-        <div className="md:hidden px-2 py-0.5">
-          <GlossyButton onClick={() => setIsOpen(true)}>
-            ☰ Menu
+        <div className="md:hidden py-0.5">
+          <GlossyButton onClick={() => setIsOpen(true)} className="">
+            <Menu size={16} />
           </GlossyButton>
         </div>
       </div>

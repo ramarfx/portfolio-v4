@@ -71,10 +71,9 @@ export function ContactTab() {
               className="mb-2.5 rounded-lg border border-blue-200/30 bg-white/50 p-3"
             >
               {[
-                { icon: "📧", title: "Email", value: "hello@alexdesigner.net" },
-                { icon: "💬", title: "MSN Messenger", value: "alexdesigner@hotmail.com" },
-                { icon: "🌍", title: "Website", value: "www.alexdesigner.net" },
-                { icon: "📍", title: "Location", value: "Jakarta, Indonesia 🇮🇩" },
+                { icon: "📧", title: "Email", value: "ramadinaalmuthazam@gmail.com" },
+                { icon: "🌍", title: "Website", value: "www.ramarfx.my.id" },
+                { icon: "📍", title: "Location", value: "DKI Jakarta, Indonesia" },
               ].map(({ icon, title, value }, i, arr) => (
                 <div key={title}>
                   <div className="flex items-center gap-2 py-1.5 text-[11px]">

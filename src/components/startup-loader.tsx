@@ -1,10 +1,20 @@
 "use client";
 
+import { useWindow } from "@/context/window-manager";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function StartupLoader() {
   const [phase, setPhase] = useState<"loading" | "ready" | "done">("loading");
+  const { openWindow } = useWindow();
+
+  const openPortfolioWindow = () => {
+    const timeout = setTimeout(() => {
+      openWindow("portofolio");
+    }, 500); // delay 1.5 detik
+
+    return () => clearTimeout(timeout);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,6 +33,8 @@ export default function StartupLoader() {
       audio.play().catch(() => {});
 
       setPhase("done");
+
+      openPortfolioWindow();
     };
 
     window.addEventListener("click", handleClick, { once: true });
@@ -30,12 +42,9 @@ export default function StartupLoader() {
     return () => window.removeEventListener("click", handleClick);
   }, [phase]);
 
-  if (phase === "done") return null;
-
   return (
     <div
-      className={`fixed inset-0 z-9999 flex items-center justify-center bg-[url('/img/bg-vista.png')] bg-cover bg-center transition-opacity duration-700`}
-    >
+      className={`fixed inset-0 z-9999 flex items-center justify-center bg-[url('/img/bg-vista.png')] bg-cover bg-center transition-opacity duration-700 ${phase === "done" ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
       <div className="text-center select-none">
         {/* Avatar */}
         <div
@@ -44,15 +53,13 @@ export default function StartupLoader() {
             background: "linear-gradient(145deg, #dfe4e8, #bfc7cd)",
             boxShadow:
               "0 6px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9)",
-          }}
-        >
+          }}>
           <div
             className="relative w-full h-full rounded-xl overflow-hidden"
             style={{
               boxShadow:
                 "inset 0 2px 4px rgba(0,0,0,0.3), inset 0 -2px 4px rgba(255,255,255,0.4)",
-            }}
-          >
+            }}>
             <Image
               src="/img/user.png"
               alt="avatar"
