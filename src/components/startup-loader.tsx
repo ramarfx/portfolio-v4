@@ -40,7 +40,7 @@ export default function StartupLoader() {
     window.addEventListener("click", handleClick, { once: true });
 
     return () => window.removeEventListener("click", handleClick);
-  }, [phase]);
+  }, [phase, openPortfolioWindow]);
 
   return (
     <div
@@ -50,7 +50,6 @@ export default function StartupLoader() {
         <div
           className="relative w-32 h-32 rounded-2xl p-1 mx-auto mb-5"
           style={{
-            background: "linear-gradient(145deg, #dfe4e8, #bfc7cd)",
             boxShadow:
               "0 6px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9)",
           }}>

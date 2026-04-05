@@ -25,7 +25,7 @@ export function ContactTab() {
             {(["name", "email", "subject"] as const).map((field) => (
               <div key={field} className="mb-1.5">
                 <label className="mb-0.5 block text-[11px] font-bold text-blue-900">
-                  {field === "name" ? "👤 Your Name" : field === "email" ? "📧 Email Address" : "📋 Subject"}
+                  {field === "name" ? "Your Name" : field === "email" ? "Email Address" : "Subject"}
                 </label>
                 <input
                   type={field === "email" ? "email" : "text"}
@@ -41,7 +41,7 @@ export function ContactTab() {
               </div>
             ))}
             <div className="mb-1.5">
-              <label className="mb-0.5 block text-[11px] font-bold text-blue-900">💬 Message</label>
+              <label className="mb-0.5 block text-[11px] font-bold text-blue-900">Message</label>
               <textarea
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -66,14 +66,14 @@ export function ContactTab() {
 
           {/* Contact info */}
           <div>
-            <SectionTitle className="mb-2">📍 Contact Info</SectionTitle>
+            <SectionTitle className="mb-2">Contact Info</SectionTitle>
             <div
               className="mb-2.5 rounded-lg border border-blue-200/30 bg-white/50 p-3"
             >
               {[
-                { icon: "📧", title: "Email", value: "ramadinaalmuthazam@gmail.com" },
-                { icon: "🌍", title: "Website", value: "www.ramarfx.my.id" },
-                { icon: "📍", title: "Location", value: "DKI Jakarta, Indonesia" },
+                { icon: "", title: "Email", value: "ramadinaalmuthazam@gmail.com" },
+                { icon: "", title: "Website", value: "www.ramarfx.my.id" },
+                { icon: "", title: "Location", value: "DKI Jakarta, Indonesia" },
               ].map(({ icon, title, value }, i, arr) => (
                 <div key={title}>
                   <div className="flex items-center gap-2 py-1.5 text-[11px]">
@@ -88,7 +88,7 @@ export function ContactTab() {
               ))}
             </div>
 
-            <SectionTitle className="mb-1.5">🕐 Availability</SectionTitle>
+            <SectionTitle className="mb-1.5">Availability</SectionTitle>
             <div
               className="rounded-lg border border-green-400/30 p-2.5"
               style={{ background: "linear-linear(180deg, rgba(100,220,100,0.2), rgba(60,180,60,0.12))" }}
@@ -98,7 +98,7 @@ export function ContactTab() {
               </p>
               <p className="mt-1 text-[10px] leading-relaxed text-green-800">
                 Mon–Fri: 9:00 AM – 6:00 PM WIB<br />
-                Response within 24 hours 🌟
+                Response within 24 hours
               </p>
             </div>
           </div>

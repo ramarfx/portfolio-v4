@@ -13,7 +13,7 @@ export const DesktopShortcut = (params: Params) => {
 
   return (
     <button
-      className="flex flex-col justify-center items-center gap-2 hover:cursor-pointer"
+      className="flex flex-col justify-center items-center gap-2 hover:cursor-pointer hover:bg-white/20 w-30 h-auto rounded py-2"
       onClick={() => openWindow(params.id)}>
       <Image
         src={params.icon}
