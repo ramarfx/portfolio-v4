@@ -43,9 +43,9 @@ export function AeroWindow({
     >
       <motion.div
         // WINDOW ANIMATION
-        initial={{ scale: 0, y: "100vh", opacity: 0 }}
+        initial={{ scale: 0, y: 90, opacity: 0 }}
         animate={{ scale: 1, y: 0, opacity: 1 }}
-        exit={{ scale: 0, y: "100vh", opacity: 0 }}
+        exit={{ scale: 0, y: 90, opacity: 0 }}
         transition={{
           duration: 0.1,
           ease: [0.22, 1, 0.36, 1],

@@ -3,7 +3,7 @@
 import { AeroWindow } from "@/components/ui/window";
 
 import { TabId } from "@/types/types";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HomeTab } from "../tabs/home-tab";
 import { ProjectsTab } from "../tabs/project-tab";
 import { SkillsTab } from "../tabs/skills-tab";
@@ -32,13 +32,13 @@ export const PortfolioWindow = () => {
   };
   return (
     <section>
-      <div className="relative z-2 mx-auto max-w-360 px-3 py-4">
+      <div className="">
         {/* ── MAIN BROWSER WINDOW ── */}
         <AeroWindow
           id="portofolio"
           title="My Portfolio — Windows Internet Explorer"
           icon="/img/icons/edge.png"
-          className="">
+          className="relative z-2 md:mx-auto max-w-360 mx-3 my-4">
           <BrowserChrome
             activeTab={activeTab}
             onTabChange={setActiveTab}
@@ -65,7 +65,7 @@ export const PortfolioWindow = () => {
         </AeroWindow>
 
         {/* ── INFO BAR WINDOW ── */}
-        <AeroWindow
+        {/* <AeroWindow
           id="info"
           title="Quick Info — Rama's Portfolio"
           icon="/img/icons/info.png"
@@ -92,7 +92,7 @@ export const PortfolioWindow = () => {
               </GlossyButton>
             </div>
           </div>
-        </AeroWindow>
+        </AeroWindow> */}
       </div>
 
       <style>{`
