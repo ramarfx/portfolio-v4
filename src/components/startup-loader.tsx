@@ -8,14 +8,6 @@ export default function StartupLoader() {
   const [phase, setPhase] = useState<"loading" | "ready" | "done">("loading");
   const { openWindow } = useWindow();
 
-  const openPortfolioWindow = () => {
-    const timeout = setTimeout(() => {
-      openWindow("portofolio");
-    }, 500); // delay 1.5 detik
-
-    return () => clearTimeout(timeout);
-  };
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setPhase("ready");
@@ -34,13 +26,17 @@ export default function StartupLoader() {
 
       setPhase("done");
 
-      openPortfolioWindow();
+      const timeout = setTimeout(() => {
+        openWindow("portofolio");
+      }, 500);
+
+      return () => clearTimeout(timeout);
     };
 
     window.addEventListener("click", handleClick, { once: true });
 
     return () => window.removeEventListener("click", handleClick);
-  }, [phase, openPortfolioWindow]);
+  }, [phase, openWindow]);
 
   return (
     <div
@@ -88,7 +84,7 @@ export default function StartupLoader() {
         {/* Loading bar (hilang saat ready) */}
         {phase === "loading" && (
           <div className="relative h-2 w-64 overflow-hidden rounded bg-white/20 mx-auto">
-            <div className="absolute inset-0 animate-loading bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+            <div className="absolute inset-0 animate-loading bg-linear-to-r from-transparent via-white/70 to-transparent" />
           </div>
         )}
       </div>

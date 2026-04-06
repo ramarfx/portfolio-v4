@@ -20,7 +20,7 @@ export function ActivityWindow() {
     <AeroWindow
       id="activity"
       title="My activity — Notepad"
-      icon="/img/icons/file.png">
+      icon="/img/icons/notepad.png">
 
       {/* Menu Bar */}
       <div className="bg-gray-100 border-b border-gray-400 text-[12px] px-2 py-1 flex gap-4">

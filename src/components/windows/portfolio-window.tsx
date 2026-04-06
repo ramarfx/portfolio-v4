@@ -33,7 +33,7 @@ export const PortfolioWindow = () => {
       {/* ── MAIN BROWSER WINDOW ── */}
       <AeroWindow
         id="portofolio"
-        title="My Portfolio — Windows Internet Explorer"
+        title="Internet Explorer"
         icon="/img/icons/edge.png">
         <BrowserChrome
           activeTab={activeTab}

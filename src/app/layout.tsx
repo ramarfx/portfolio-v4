@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body
-        className="relative w-full min-h-screen"
+        className="relative w-full min-h-screen overflow-x-hidden"
         style={{
           fontFamily: "'Trebuchet MS', Tahoma, Verdana, sans-serif",
           fontSize: 13,
@@ -39,7 +39,7 @@ export default function RootLayout({
         <WindowProvider>
           <div className="fixed inset-0 -z-10">
             <Image
-              src="/img/background.png"
+              src="/img/background-2.jpg"
               alt="bg"
               fill
               className="object-cover"

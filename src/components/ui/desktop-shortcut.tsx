@@ -22,7 +22,7 @@ export const DesktopShortcut = (params: Params) => {
         height={200}
         className="size-20"
       />
-      <p className="text-white text-center">{params.text}</p>
+      <p className="text-white text-center text-shadow-md/50">{params.text}</p>
     </button>
   );
 };
