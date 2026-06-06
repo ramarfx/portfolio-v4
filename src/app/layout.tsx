@@ -4,6 +4,7 @@ import "./globals.css";
 import StartupLoader from "@/components/startup-loader";
 import { WindowProvider } from "@/context/window-manager";
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -110,6 +111,7 @@ export default function RootLayout({
 
           {children}
         </WindowProvider>
+        <Analytics/>
       </body>
     </html>
   );
