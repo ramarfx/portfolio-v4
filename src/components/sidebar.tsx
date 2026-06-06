@@ -108,7 +108,7 @@ export function Sidebar({
               );
             })}
             <a
-              href="https://drive.google.com/file/d/1bh5Wf1mI2WvRlj97eXCyZl2A6e8DAlvm/view?usp=sharing"
+              href="https://docs.google.com/document/d/1f-NoblChbnZom8KwiuL7IV2tz4sS_cGY-6h8uULgmIc/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className={
