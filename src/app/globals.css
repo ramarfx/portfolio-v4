@@ -71,8 +71,8 @@ body {
   }
 
   .crt-flicker {
-    /* Flicker yang sangat halus agar tidak creepy */
-    animation: crtFlicker 8s infinite;
+    /* Flicker refresh rate monitor (sangat cepat namun intensitasnya ringan) */
+    animation: crtFlicker 0.15s infinite;
   }
 }
 
@@ -81,12 +81,8 @@ body {
     opacity: 1;
   }
 
-  5% {
-    opacity: 0.98;
-  }
-
-  10% {
-    opacity: 1;
+  50% {
+    opacity: 0.8;
   }
 
   100% {

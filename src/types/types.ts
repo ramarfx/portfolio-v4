@@ -8,7 +8,7 @@ export interface Project {
   title: string;
   description: string;
   tags: { label: string; color: "blue" | "green" | "aqua" | "yellow" }[];
-  links: { label: string; variant: "blue" | "green" | "aqua" | "silver" }[];
+  links: { label: string; variant: "blue" | "green" | "aqua" | "silver"; href?: string }[];
 }
 
 export interface Skill {

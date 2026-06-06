@@ -53,7 +53,7 @@ export function ProjectCard({ project, size = 'md' }: ProjectCardProps) {
         <div className="flex gap-1.5">
           {project.links.map((link) => (
             <GlossyButton key={link.label} variant={link.variant} size="sm" className="px-5">
-              {link.label}
+              <a href={link.href}>{link.label}</a>
             </GlossyButton>
           ))}
         </div>

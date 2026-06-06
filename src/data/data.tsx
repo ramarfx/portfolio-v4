@@ -14,7 +14,19 @@ export const PROJECTS: Project[] = [
       { label: "ThreeJS", color: "green" },
       { label: "UI/UX Design", color: "aqua" },
     ],
-    links: [{ label: "Live Demo", variant: "blue" }],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://web.indi.tech" }],
+  },
+  {
+    id: "4",
+    title: "Lombakan",
+    image: "/projects/lombakan.png",
+    description:
+      "Lombakan is a mentoring program from KSM VeteranTech UPN Veteran Jakarta to help students prepare for GEMASTIK, technology competitions, and business competitions with experienced mentors.",
+    tags: [
+      { label: "Next.js", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+    ],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://lombakan.id" }],
   },
   {
     id: "2",
@@ -28,7 +40,7 @@ export const PROJECTS: Project[] = [
       { label: "ThreeJS", color: "green" },
       { label: "UI/UX Design", color: "aqua" },
     ],
-    links: [{ label: "Live Demo", variant: "blue" }],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://geoportal-lautberkah.kalteng.go.id" }],
   },
   {
     id: "3",
@@ -42,10 +54,10 @@ export const PROJECTS: Project[] = [
       { label: "ThreeJS", color: "green" },
       { label: "UI/UX Design", color: "aqua" },
     ],
-    links: [{ label: "Live Demo", variant: "blue" }],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://pestawarnanada.com" }],
   },
   {
-    id: "4",
+    id: "5",
     title: "Rebellum",
     image: "/projects/rebellum.png",
     description:
@@ -56,10 +68,10 @@ export const PROJECTS: Project[] = [
       { label: "ThreeJS", color: "green" },
       { label: "UI/UX Design", color: "aqua" },
     ],
-    links: [{ label: "Live Demo", variant: "blue" }],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://rebellum.vercel.app" }],
   },
   {
-    id: "5",
+    id: "6",
     title: "HealthySelf",
     image: "/projects/healthyself.jpeg",
     description:
@@ -70,21 +82,7 @@ export const PROJECTS: Project[] = [
       { label: "ThreeJS", color: "green" },
       { label: "UI/UX Design", color: "aqua" },
     ],
-    links: [{ label: "Live Demo", variant: "blue" }],
-  },
-  {
-    id: "6",
-    title: "E-Mading",
-    image: "/projects/emading.png",
-    description:
-      "Digital wall magazine platform where school residents, including teachers and students, can post various activities such as posters and school announcements.",
-    tags: [
-      { label: "React", color: "green" },
-      { label: "Tailwindcss", color: "blue" },
-      { label: "ThreeJS", color: "green" },
-      { label: "UI/UX Design", color: "aqua" },
-    ],
-    links: [{ label: "Live Demo", variant: "blue" }],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://healthyself.vercel.app" }],
   },
 ];
 
