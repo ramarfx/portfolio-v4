@@ -60,7 +60,7 @@ export function RepoFileList({
                 {/* Name */}
                 <div className="flex items-center gap-2 overflow-hidden">
                   <Image
-                    src={"/img/icons/folder-closed.png"}
+                    src={"/img/icons/folder-closed.webp"}
                     alt="file icon"
                     width={16}
                     height={16}
@@ -99,7 +99,7 @@ export function RepoFileList({
                 ].join(" ")}
               >
                 <Image
-                  src={"/img/icons/folder-closed.png"}
+                  src={"/img/icons/folder-closed.webp"}
                   alt="file icon"
                   width={32}
                   height={32}

@@ -41,7 +41,7 @@ export default function StartupLoader() {
 
   return (
     <div
-      className={`fixed inset-0 z-9999 flex items-center justify-center bg-[url('/img/bg-vista.png')] bg-cover bg-center transition-opacity duration-700 ${phase === "done" ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+      className={`fixed inset-0 z-9999 flex items-center justify-center bg-[url('/img/bg-vista.webp')] bg-cover bg-center transition-opacity duration-700 ${phase === "done" ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
       <div className="text-center select-none">
         {/* Avatar */}
         <div
@@ -57,7 +57,7 @@ export default function StartupLoader() {
                 "inset 0 2px 4px rgba(0,0,0,0.3), inset 0 -2px 4px rgba(255,255,255,0.4)",
             }}>
             <Image
-              src="/img/user.png"
+              src="/img/user.webp"
               alt="avatar"
               width={128}
               height={128}

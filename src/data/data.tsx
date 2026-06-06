@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
   {
     id: "1",
     title: "Inditech Company Profile",
-    image: "/projects/inditech.png",
+    image: "/projects/inditech.webp",
     description:
       "A unique and interactive 3D-based company profile website for PT. Indi Technology, integrated with a day and night cycle system.",
     tags: [
@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
   {
     id: "4",
     title: "Lombakan",
-    image: "/projects/lombakan.png",
+    image: "/projects/lombakan.webp",
     description:
       "Lombakan is a mentoring program from KSM VeteranTech UPN Veteran Jakarta to help students prepare for GEMASTIK, technology competitions, and business competitions with experienced mentors.",
     tags: [
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
   {
     id: "2",
     title: "Geoportal Laut Berkah",
-    image: "/projects/geoportal.png",
+    image: "/projects/geoportal.webp",
     description:
       "Platform related to permits for marine space utilization letters for the province of Central Kalimantan based on 3D.",
     tags: [
@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
   {
     id: "3",
     title: "Pesta Warna Nada",
-    image: "/projects/pwn.png",
+    image: "/projects/pwn.webp",
     description:
       "Landing page for a music festival event called Pesta Warna Nada, which is held annually in Jakarta.",
     tags: [
@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
   {
     id: "5",
     title: "Rebellum",
-    image: "/projects/rebellum.png",
+    image: "/projects/rebellum.webp",
     description:
       "Rebellum is a platform that provides information and solutions related to juvenile delinquency in Indonesia.",
     tags: [
@@ -73,7 +73,7 @@ export const PROJECTS: Project[] = [
   {
     id: "6",
     title: "HealthySelf",
-    image: "/projects/healthyself.jpeg",
+    image: "/projects/healthyself.webp",
     description:
       "Platform that provides information related to maintaining a healthy lifestyle for various groups, from babies to the elderly.",
     tags: [
@@ -123,34 +123,34 @@ export const STATS: StatItem[] = [
 ];
 
 export const NAV_ITEMS: NavItem[] = [
-  { icon: "/img/icons/home.png", label: "Home", tabId: "home" },
-  { icon: "/img/icons/folder.png", label: "My Projects", tabId: "projects" },
-  { icon: "/img/icons/gear.png", label: "Skills", tabId: "skills" },
-  { icon: "/img/icons/mail.png", label: "Contact Me", tabId: "contact" },
+  { icon: "/img/icons/home.webp", label: "Home", tabId: "home" },
+  { icon: "/img/icons/folder.webp", label: "My Projects", tabId: "projects" },
+  { icon: "/img/icons/gear.webp", label: "Skills", tabId: "skills" },
+  { icon: "/img/icons/mail.webp", label: "Contact Me", tabId: "contact" },
 ];
 
 export const TABS = [
   {
     id: "home" as const,
-    icon: "/img/icons/home.png",
+    icon: "/img/icons/home.webp",
     label: "Home",
     file: "index.html",
   },
   {
     id: "projects" as const,
-    icon: "/img/icons/folder.png",
+    icon: "/img/icons/folder.webp",
     label: "Projects",
     file: "projects.html",
   },
   {
     id: "skills" as const,
-    icon: "/img/icons/gear.png",
+    icon: "/img/icons/gear.webp",
     label: "Skills",
     file: "skills.html",
   },
   {
     id: "contact" as const,
-    icon: "/img/icons/mail.png",
+    icon: "/img/icons/mail.webp",
     label: "Contact",
     file: "contact.html",
   },

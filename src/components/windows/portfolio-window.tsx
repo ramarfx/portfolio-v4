@@ -34,7 +34,7 @@ export const PortfolioWindow = () => {
       <AeroWindow
         id="portofolio"
         title="Internet Explorer"
-        icon="/img/icons/edge.png">
+        icon="/img/icons/edge.webp">
         <BrowserChrome
           activeTab={activeTab}
           onTabChange={setActiveTab}

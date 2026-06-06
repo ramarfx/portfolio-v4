@@ -99,7 +99,7 @@ export default function RootLayout({
         <WindowProvider>
           <div className="fixed inset-0 -z-10">
             <Image
-              src="/img/background-2.jpg"
+              src="/img/background-2.webp"
               alt="bg"
               fill
               className="object-cover"

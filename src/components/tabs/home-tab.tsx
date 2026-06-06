@@ -82,7 +82,7 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
 
           <div className="flex-1">
             <Image
-              src="/img/decoration.png"
+              src="/img/decoration.webp"
               alt="Profile Picture"
               width={120}
               height={120}
@@ -98,21 +98,21 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {[
             {
-              icon: "/img/icons/internet-option.png",
+              icon: "/img/icons/internet-option.webp",
               title: "Website Development",
               desc: "Building responsive and interactive websites from landing page to complex web apps using modern frameworks.",
               bg: "rgba(80,160,255,0.15)",
               border: "rgba(80,150,240,0.3)",
             },
             {
-              icon: "/img/icons/system-restore.png",
+              icon: "/img/icons/system-restore.webp",
               title: "Web App Optimization",
               desc: "Optimizing existing web applications for better performance and user experience.",
               bg: "rgba(60,200,100,0.15)",
               border: "rgba(60,180,80,0.3)",
             },
             {
-              icon: "/img/icons/synchronize.png",
+              icon: "/img/icons/synchronize.webp",
               title: "System Integration",
               desc: "Integrating third-party APIs and services to enhance functionality and streamline workflows.",
               bg: "rgba(200,80,255,0.12)",

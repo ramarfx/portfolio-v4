@@ -6,16 +6,16 @@ import { useEffect, useState } from "react";
 
 /* ── Window entries shown in the taskbar ─────────────────────────── */
 const TASKBAR_WINDOWS = [
-  { id: "portofolio", label: "Portofolio", icon: "/img/icons/home.png" },
-  { id: "repository", label: "File Explorer", icon: "/img/icons/file-explorer.png" },
-  { id: "activity", label: "Notepad", icon: "/img/icons/notepad.png" },
+  { id: "portofolio", label: "Portofolio", icon: "/img/icons/home.webp" },
+  { id: "repository", label: "File Explorer", icon: "/img/icons/file-explorer.webp" },
+  { id: "activity", label: "Notepad", icon: "/img/icons/notepad.webp" },
 ];
 
 /* ── System-tray quick-launch icons ─────────────────────────────── */
 const TRAY_ICONS = [
-  { icon: "/img/icons/mail.png", label: "Mail", href: "mailto:ramadina@example.com" },
+  { icon: "/img/icons/mail.webp", label: "Mail", href: "mailto:ramadina@example.com" },
   { icon: "/img/icons/linkedin.svg", label: "LinkedIn", href: "https://linkedin.com/in/ramarfx" },
-  { icon: "/img/icons/gear.png", label: "Settings" },
+  { icon: "/img/icons/gear.webp", label: "Settings" },
 ];
 
 /* ── Digital clock ───────────────────────────────────────────────── */
@@ -104,11 +104,11 @@ export function Taskbar() {
               {/* Divider */}
               <div className="my-1 border-t border-gray-200 mx-2" />
               <button className="w-full flex items-center gap-3 px-4 py-2.5 text-gray-800 text-[13px] hover:bg-blue-500 hover:text-white transition-colors text-left">
-                <Image src="/img/icons/gear.png" alt="Settings" width={24} height={24} className="object-contain flex-shrink-0" />
+                <Image src="/img/icons/gear.webp" alt="Settings" width={24} height={24} className="object-contain flex-shrink-0" />
                 <span className="font-medium">Settings</span>
               </button>
               <button className="w-full flex items-center gap-3 px-4 py-2.5 text-gray-800 text-[13px] hover:bg-blue-500 hover:text-white transition-colors text-left">
-                <Image src="/img/icons/mail.png" alt="Mail" width={24} height={24} className="object-contain flex-shrink-0" />
+                <Image src="/img/icons/mail.webp" alt="Mail" width={24} height={24} className="object-contain flex-shrink-0" />
                 <span className="font-medium">Mail</span>
               </button>
             </div>
@@ -152,7 +152,7 @@ export function Taskbar() {
                   boxShadow: "0 0 0 2px rgba(255,255,255,0.8), 0 4px 12px rgba(0,0,0,0.2)",
                 }}
               >
-                <Image src="/img/user.png" alt="user" width={64} height={64} className="object-cover w-full h-full" />
+                <Image src="/img/user.webp" alt="user" width={64} height={64} className="object-cover w-full h-full" />
               </div>
               <div className="text-right">
                 <div className="text-white font-bold text-sm leading-tight drop-shadow-md">Ramadina</div>
@@ -163,11 +163,11 @@ export function Taskbar() {
             {/* Nav items */}
             <div className="flex-1 py-1">
               {[
-                { label: "Documents", icon: "/img/icons/file.png" },
-                { label: "Pictures", icon: "/img/icons/Fax.png" },
-                { label: "GitHub", icon: "/img/icons/folder.png", href: "https://github.com/ramarfx" },
+                { label: "Documents", icon: "/img/icons/file.webp" },
+                { label: "Pictures", icon: "/img/icons/Fax.webp" },
+                { label: "GitHub", icon: "/img/icons/folder.webp", href: "https://github.com/ramarfx" },
                 { label: "LinkedIn", icon: "/img/icons/linkedin.svg", href: "https://linkedin.com/in/ramarfx" },
-                { label: "Portfolio Site", icon: "/img/icons/edge.png", href: "https://ramarfx.my.id" },
+                { label: "Portfolio Site", icon: "/img/icons/edge.webp", href: "https://ramarfx.my.id" },
               ].map((item) => (
                 <a
                   key={item.label}
@@ -235,7 +235,7 @@ export function Taskbar() {
           className="relative flex items-center gap-1.5 h-full pl-3 pr-5 flex-shrink-0 group"
         >
           {/* Windows orb */}
-          <Image src="/img/icons/vista-logo.png" alt="Start" width={50} height={50} className="object-contain" priority />
+          <Image src="/img/icons/vista-logo.webp" alt="Start" width={50} height={50} className="object-contain" priority />
         </button>
 
         {/* ── Pinned window buttons ──────────────────────────────────── */}

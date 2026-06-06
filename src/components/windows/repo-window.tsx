@@ -32,7 +32,7 @@ export const RepoWindow = () => {
     <AeroWindow
       id="repository"
       title="File Explorer"
-      icon="/img/icons/file-explorer.png">
+      icon="/img/icons/file-explorer.webp">
       <MenuBar />
       <RepoToolbar
         isSidebarCollapsed={isSidebarCollapsed}

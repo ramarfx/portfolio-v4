@@ -60,7 +60,7 @@ export function Sidebar({
           <div className="px-3 py-3 text-center">
             <div className="relative mx-auto mb-2 flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl">
               <Image
-                src="/img/user.png"
+                src="/img/user.webp"
                 alt="User Avatar"
                 width={64}
                 height={64}
@@ -115,7 +115,7 @@ export function Sidebar({
                 "flex w-full items-center gap-1.5 border-l-[3px] px-3 py-1.5 text-[11px] border-transparent text-blue-800 hover:border-blue-300 hover:bg-blue-100/20"
               }>
               <Image
-                src={"/img/icons/file.png"}
+                src={"/img/icons/file.webp"}
                 alt={"CV"}
                 width={16}
                 height={16}

@@ -12,18 +12,18 @@ export default function Home() {
       <div className="absolute top-10 left-10 z-0 grid grid-cols-2">
         <DesktopShortcut
           id="portofolio"
-          icon="/img/icons/system-information.png"
+          icon="/img/icons/system-information.webp"
           text="My Portfolio"
         />
 
         <DesktopShortcut
           id="repository"
-          icon="/img/icons/file.png"
+          icon="/img/icons/file.webp"
           text="File Explorer"
         />
         <DesktopShortcut
           id="activity"
-          icon="/img/icons/notepad.png"
+          icon="/img/icons/notepad.webp"
           text="Log activity"
         />
       </div>

@@ -21,7 +21,7 @@ export function ActivityWindow() {
     <AeroWindow
       id="activity"
       title="My activity — Notepad"
-      icon="/img/icons/notepad.png">
+      icon="/img/icons/notepad.webp">
 
       {/* Menu Bar */}
       <MenuBar/>
