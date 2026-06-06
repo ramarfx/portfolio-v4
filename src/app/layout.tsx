@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// import "./aero.css";
+import "7.css/dist/gui/window.css";
 import StartupLoader from "@/components/startup-loader";
 import { WindowProvider } from "@/context/window-manager";
 import Image from "next/image";
@@ -110,8 +112,12 @@ export default function RootLayout({
           <StartupLoader />
 
           {children}
+
+          {/* CRT Overlays */}
+          <div className="crt-vignette" />
+          <div className="crt-overlay crt-flicker" />
         </WindowProvider>
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );

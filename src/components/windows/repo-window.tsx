@@ -10,6 +10,7 @@ import {
   RepoStatusBar,
   RepoToolbar,
 } from "../repo";
+import { MenuBar } from "../ui/menu-bar";
 
 export const RepoWindow = () => {
   const [repos, setRepos] = useState<Repo[]>();
@@ -32,7 +33,7 @@ export const RepoWindow = () => {
       id="repository"
       title="File Explorer"
       icon="/img/icons/file-explorer.png">
-      <RepoMenuBar />
+      <MenuBar />
       <RepoToolbar
         isSidebarCollapsed={isSidebarCollapsed}
         onToggleSidebar={() => setIsSidebarCollapsed((v) => !v)}

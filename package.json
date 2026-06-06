@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "7.css": "^0.21.1",
     "@icons-pack/react-simple-icons": "^13.13.0",
     "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
