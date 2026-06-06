@@ -4,6 +4,7 @@ import "./globals.css";
 // import "./aero.css";
 import "7.css/dist/gui/window.css";
 import StartupLoader from "@/components/startup-loader";
+import { Taskbar } from "@/components/taskbar";
 import { WindowProvider } from "@/context/window-manager";
 import Image from "next/image";
 import { Analytics } from "@vercel/analytics/next";
@@ -106,11 +107,18 @@ export default function RootLayout({
           </div>
           <StartupLoader />
 
-          {children}
+          <div className="pb-0">
+            {children}
+          </div>
 
           {/* CRT Overlays */}
           <div className="crt-vignette" />
-          <div className="crt-overlay crt-flicker" />
+          <div className="crt-overlay" />
+
+          {/* Vista Taskbar */}
+          <div className="hidden md:block">
+            <Taskbar />
+          </div>
         </WindowProvider>
         <Analytics />
       </body>

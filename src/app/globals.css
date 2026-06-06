@@ -23,7 +23,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* cursor: url("/img/cursor-normal.svg") 4 2, default; */
 }
+
+/* 
+a, button, [role="button"], label, select, summary, [tabindex]:not([tabindex="-1"]) {
+  cursor: url("/img/cursor-pointer.svg") 13 5, pointer;
+} */
 
 @layer components {
   .bg-gradient-blue {
