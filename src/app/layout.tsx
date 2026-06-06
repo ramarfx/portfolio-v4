@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 // import "./aero.css";
 import "7.css/dist/gui/window.css";
@@ -7,11 +7,6 @@ import StartupLoader from "@/components/startup-loader";
 import { WindowProvider } from "@/context/window-manager";
 import Image from "next/image";
 import { Analytics } from "@vercel/analytics/next";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -92,11 +87,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      className={`${geistMono.variable} h-full antialiased`}>
       <body
         className="relative w-full min-h-screen overflow-x-hidden"
         style={{
-          fontFamily: "'Trebuchet MS', Tahoma, Verdana, sans-serif",
+          fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
           fontSize: 13,
           color: "#1a3a1a",
         }}>

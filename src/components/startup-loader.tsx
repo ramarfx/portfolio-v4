@@ -2,6 +2,7 @@
 
 import { useWindow } from "@/context/window-manager";
 import Image from "next/image";
+import "7.css/dist/gui/spinner.css";
 import { useEffect, useState } from "react";
 
 export default function StartupLoader() {
@@ -83,9 +84,10 @@ export default function StartupLoader() {
 
         {/* Loading bar (hilang saat ready) */}
         {phase === "loading" && (
-          <div className="relative h-2 w-64 overflow-hidden rounded bg-white/20 mx-auto">
-            <div className="absolute inset-0 animate-loading bg-linear-to-r from-transparent via-white/70 to-transparent" />
-          </div>
+          // <div className="relative h-2 w-64 overflow-hidden rounded bg-white/20 mx-auto">
+          //   <div className="absolute inset-0 animate-loading bg-linear-to-r from-transparent via-white/70 to-transparent" />
+          // </div>
+          <span className="loader animate" aria-label="Processing your request"></span>
         )}
       </div>
 
