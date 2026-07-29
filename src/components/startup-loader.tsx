@@ -45,7 +45,7 @@ export default function StartupLoader() {
       <div className="text-center select-none">
         {/* Avatar */}
         <div
-          className="relative w-32 h-32 rounded-2xl p-1 mx-auto mb-5"
+          className="relative w-32 h-32 rounded-lg p-1 mx-auto mb-5"
           style={{
             boxShadow:
               "0 6px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9)",

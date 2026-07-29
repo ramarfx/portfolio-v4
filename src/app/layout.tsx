@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Ramadina",
   },
   description:
-    "Portfolio of Ramadina Al Muzthazam — a passionate Full Stack Developer building modern web experiences with a nostalgic Windows Vista Aero twist.",
+    "Portfolio of Ramadina Al Muzthazam — Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2× Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
   keywords: [
     "Ramadina",
     "Ramadina Al Muzthazam",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     url: BASE_URL,
     title: "Ramadina Al Muzthazam — Portfolio",
     description:
-      "Portfolio of Ramadina Al Muzthazam — a passionate Full Stack Developer building modern web experiences with a nostalgic Windows Vista Aero twist.",
+      "Portfolio of Ramadina Al Muzthazam — Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2× Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
     siteName: "Ramadina Portfolio",
     images: [
       {
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ramadina Al Muzthazam — Portfolio",
     description:
-      "Portfolio of Ramadina Al Muzthazam — a passionate Full Stack Developer building modern web experiences with a nostalgic Windows Vista Aero twist.",
+      "Portfolio of Ramadina Al Muzthazam — Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2× Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
     images: ["/og-image.png"],
     creator: "@ramarfx",
   },
@@ -112,8 +112,8 @@ export default function RootLayout({
           </div>
 
           {/* CRT Overlays */}
+          {/* <div className="crt" /> */}
           <div className="crt-vignette" />
-          <div className="crt-overlay" />
 
           {/* Vista Taskbar */}
           <div className="hidden md:block">

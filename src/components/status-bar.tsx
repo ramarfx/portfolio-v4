@@ -1,3 +1,5 @@
+import { Globe, Lock, ZoomIn } from "lucide-react";
+
 export function StatusBar() {
   return (
     <div
@@ -7,11 +9,18 @@ export function StatusBar() {
           "linear-gradient(180deg, rgba(200,225,255,0.7) 0%, rgba(170,205,245,0.65) 100%)",
       }}
     >
-      <span className="flex items-center gap-1">🔒 Trusted Site</span>
       <span className="flex items-center gap-1">
-        🌐 Internet | Protected Mode: On
+        <Lock size={10} className="text-blue-600" />
+        Trusted Site
       </span>
-      <span className="ml-auto flex items-center gap-1">🔍 100% ▾</span>
+      <span className="flex items-center gap-1">
+        <Globe size={10} className="text-blue-600" />
+        Internet | Protected Mode: On
+      </span>
+      <span className="ml-auto flex items-center gap-1">
+        <ZoomIn size={10} className="text-blue-600" />
+        100% ▾
+      </span>
     </div>
   );
 }

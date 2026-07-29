@@ -1,8 +1,8 @@
 "use client";
 
 import { Project } from "@/types/types";
-import { Tag } from "./ui/tag";
-import { GlossyButton } from "./ui/button";
+import { Tag } from "./windows/ui/tag";
+import { GlossyButton } from "./windows/ui/button";
 import Image from "next/image";
 
 interface ProjectCardProps {

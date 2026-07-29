@@ -1,6 +1,6 @@
 "use client";
 
-import { DesktopShortcut } from "@/components/ui/desktop-shortcut";
+import { DesktopShortcut } from "@/components/windows/ui/desktop-shortcut";
 import { ActivityWindow } from "@/components/windows/notepad-window";
 import { PortfolioWindow } from "@/components/windows/portfolio-window";
 import { RepoWindow } from "@/components/windows/repo-window";
@@ -31,7 +31,7 @@ export default function Home() {
       {/* window */}
       <PortfolioWindow />
       <RepoWindow />
-      <ActivityWindow/>
+      <ActivityWindow />
     </main>
   );
 }

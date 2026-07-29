@@ -1,6 +1,6 @@
 "use client";
 
-import { AeroWindow } from "@/components/ui/window";
+import { AeroWindow } from "@/components/windows/ui/window";
 
 import { TabId } from "@/types/types";
 import React, { useState } from "react";

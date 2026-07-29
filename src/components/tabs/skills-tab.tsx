@@ -4,10 +4,11 @@ import {
   FRAMEWORK_SKILLS,
   TOOLS,
 } from "@/data/data";
-import { SectionBody } from "../ui/section-body";
-import { SectionTitle } from "../ui/section-title";
+import { SectionBody } from "../windows/ui/section-body";
+import { SectionTitle } from "../windows/ui/section-title";
 import { SkillBar } from "../skillbar";
-import { Tag } from "../ui/tag";
+import { Tag } from "../windows/ui/tag";
+import Image from "next/image";
 
 export function SkillsTab() {
   return (
@@ -31,7 +32,7 @@ export function SkillsTab() {
         </div>
       </div>
 
-      <SectionTitle>Tools & Technologies</SectionTitle>
+      <SectionTitle>Tools &amp; Technologies</SectionTitle>
       <SectionBody>
         <div className="flex flex-wrap gap-1.5">
           {TOOLS.map((t, i) => (
@@ -43,13 +44,19 @@ export function SkillsTab() {
         </div>
       </SectionBody>
 
-      <SectionTitle>Education & Competitions</SectionTitle>
+      <SectionTitle>Education &amp; Competitions</SectionTitle>
       <SectionBody>
         {COMPETITION.map(({ icon, title, sub }) => (
           <div
             key={title}
             className="flex items-start gap-2.5 border-b border-blue-200/25 py-1.5 text-[11px] last:border-0">
-            <span className="text-lg">{icon}</span>
+            <span className="flex-shrink-0 mt-0.5">
+              {icon.startsWith("/") ? (
+                <Image src={icon} alt={title} width={16} height={16} className="object-contain" />
+              ) : (
+                <span className="text-lg">{icon}</span>
+              )}
+            </span>
             <div>
               <p className="font-bold text-blue-900">{title}</p>
               <p className="text-blue-600">{sub}</p>

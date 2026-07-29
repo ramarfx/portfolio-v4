@@ -1,5 +1,5 @@
 "use client";
-import { AeroWindow } from "../ui/window";
+import { AeroWindow } from "./ui/window";
 
 import { useEffect, useState } from "react";
 import { Repo } from "@/data/repos";
@@ -10,7 +10,7 @@ import {
   RepoStatusBar,
   RepoToolbar,
 } from "../repo";
-import { MenuBar } from "../ui/menu-bar";
+import { MenuBar } from "./ui/menu-bar";
 
 export const RepoWindow = () => {
   const [repos, setRepos] = useState<Repo[]>();

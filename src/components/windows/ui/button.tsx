@@ -49,7 +49,7 @@ export function GlossyButton({
 }: GlossyButtonProps) {
   const base = cn(
     "relative inline-flex items-center gap-1.5 cursor-pointer",
-    "rounded-full border font-bold font-[Trebuchet_MS,Tahoma,Verdana,sans-serif]",
+    "rounded-[4px] border font-bold font-[Trebuchet_MS,Tahoma,Verdana,sans-serif]",
     "overflow-hidden transition-all duration-150 active:translate-y-px select-none",
     "hover:-translate-y-0.5",
     size === "sm" ? "px-3 py-1 text-[10px]" : "px-4 py-1.5 text-[11px]",
@@ -60,7 +60,7 @@ export function GlossyButton({
   const content = (
     <>
       <span
-        className="pointer-events-none absolute inset-0 rounded-full"
+        className="pointer-events-none absolute inset-0 rounded-[4px]"
         style={{
           background:
             "linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.1) 55%, transparent 55%)",

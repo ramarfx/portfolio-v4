@@ -158,29 +158,29 @@ export const TABS = [
 
 export const COMPETITION = [
   {
-    icon: "🎓",
+    icon: "/img/icons/home.webp",
     title: 'UPN "Veteran" Jakarta',
     sub: "Computer Science, 2025 - Present",
   },
   {
-    icon: "🏆",
-    title: "2st Place - LKS Web Technologies Regional DKI Jakarta",
-    sub: "Puspresnas · 2024",
+    icon: "/img/icons/gear.webp",
+    title: "2nd Place | LKS Web Technologies, Regional DKI Jakarta",
+    sub: "Puspresnas - 2024",
   },
   {
-    icon: "🏆",
-    title: "2st Place - AWS C4 Web Design Regional DKI Jakarta",
-    sub: "Sagasitas · 2024",
+    icon: "/img/icons/gear.webp",
+    title: "2nd Place | AWS C4 Web Design, Regional DKI Jakarta",
+    sub: "Sagasitas - 2024",
   },
   {
-    icon: "🏆",
-    title: "Best Design - AWS C4 Web Design Regional DKI Jakarta",
-    sub: "Sagasitas · 2024",
+    icon: "/img/icons/system-information.webp",
+    title: "Best Design | AWS C4 Web Design, Regional DKI Jakarta",
+    sub: "Sagasitas - 2024",
   },
   {
-    icon: "🏆",
+    icon: "/img/icons/gear.webp",
     title:
-      "1st Runner Up - Micro Influencer Gerakan Sekolah Sehat National Competition",
-    sub: "Sagasitas · 2024",
+      "1st Runner Up | Micro Influencer Gerakan Sekolah Sehat, National",
+    sub: "Sagasitas - 2024",
   },
 ];

@@ -1,96 +1,82 @@
 "use client";
 
 import { TabId } from "@/types/types";
-import { GlossyButton } from "../ui/button";
-import { NotifBox } from "../ui/notif-box";
-import { SectionBody } from "../ui/section-body";
-import { SectionTitle } from "../ui/section-title";
+import { GlossyButton } from "../windows/ui/button";
+import { NotifBox } from "../windows/ui/notif-box";
+import { SectionBody } from "../windows/ui/section-body";
+import { SectionTitle } from "../windows/ui/section-title";
+import { StatusDot } from "../windows/ui/status-dot";
 import Image from "next/image";
-import { PROJECTS } from "@/data/data";
+import { PROJECTS, STATS } from "@/data/data";
 import { ProjectCard } from "../project-card";
+import { FileDown, FolderOpen, Info } from "lucide-react";
 
 export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
   return (
     <div>
       <NotifBox variant="yellow">
-        <span>💡</span>
+        <Info size={14} className="shrink-0 mt-0.5" />
         <span>
-          Welcome to my portfolio! I&rsquo;m a front-end developer and Backend
-          Developer passionate about creating beautiful digital experiences.
-          Feel free to browse around!
+          Yo! Welcome to my portfolio. Take a look around!
         </span>
       </NotifBox>
 
-      {/* About banner */}
-      <div
-        className="relative mb-3.5 overflow-hidden rounded-lg border border-white/70 p-4"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(80,160,255,0.3) 0%, rgba(60,220,220,0.2) 40%, rgba(100,220,100,0.25) 100%)",
-          boxShadow:
-            "inset 0 1px 0 rgba(255,255,255,0.7), 0 2px 8px rgba(0,100,200,0.1)",
-        }}>
-        {/* Gloss */}
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-1/2"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%)",
-          }}
-        />
+      {/* About Section */}
+      <SectionTitle>About Me</SectionTitle>
+      <SectionBody>
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          {/* Left: user avatar */}
+          <div className="flex shrink-0 min-w-32 items-center justify-center">
+            <div className="relative size-24 overflow-hidden">
+              <Image
+                src="/img/user.webp"
+                alt="Ramadina Al Muzthazam"
+                width={100}
+                height={100}
+                priority
+                className="size-full object-cover"
+              />
+            </div>
+          </div>
 
-        <div className="flex flex-col-reverse md:flex-row gap-5 justify-between items-center">
-          <div className="">
-            <h1
-              className="relative mb-1 font-[Trebuchet_MS,sans-serif] text-[22px] font-bold"
-              style={{
-                background: "linear-gradient(180deg, #2060d0 0%, #0a40a0 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}>
-              Ramadina Al Muzthazam
-            </h1>
-            <p className="relative mb-3 text-[12px] italic text-green-800">
-              Fullstack Web Developer
+          {/* Center: name, title, bio, actions */}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-0.5">
+              <StatusDot />
+              <h1
+                className="font-[Trebuchet_MS,sans-serif] text-[18px] font-bold text-blue-950"
+                style={{ textShadow: "0 1px 0 rgba(255,255,255,0.85)" }}>
+                Ramadina Al Muzthazam
+              </h1>
+            </div>
+            <p className="text-[11px] text-blue-600 mb-2 font-medium">
+              Fullstack Web Developer &nbsp;·&nbsp; UPN Veteran Jakarta
             </p>
-            <p className="relative max-w-lg text-[12px] leading-relaxed text-blue-900">
-              Hello! I&rsquo;m a passionate Web Developer with over 3 years of
-              experience building modern, responsive, and user-friendly web
-              applications. I enjoy turning ideas into functional and scalable
-              digital products using the latest web technologies.
+            <p className="text-[12px] leading-relaxed text-blue-900 max-w-lg mb-3">
+              Fullstack Web Developer experienced building scalable web
+              applications and interactive 3D web experiences using React,
+              Three.js, Laravel. Experienced in backend architecture, API
+              optimization, and WebGL-based frontend development.
             </p>
-            <div className="relative mt-3 flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2">
               <GlossyButton
                 variant="blue"
                 onClick={() => onTabChange("projects")}>
                 View Projects
               </GlossyButton>
-              <GlossyButton
-                variant="green"
-                onClick={() => onTabChange("contact")}>
-                Hire Me!
-              </GlossyButton>
               <a
-                href="https://drive.google.com/file/d/1bh5Wf1mI2WvRlj97eXCyZl2A6e8DAlvm/view?usp=sharing"
+                href="https://docs.google.com/document/d/1f-NoblChbnZom8KwiuL7IV2tz4sS_cGY-6h8uULgmIc/edit?tab=t.0"
                 target="_blank"
                 rel="noopener noreferrer">
-                <GlossyButton variant="silver">📄 Download CV</GlossyButton>
+                <GlossyButton variant="silver">
+                  <FileDown size={12} />
+                  Download CV
+                </GlossyButton>
               </a>
             </div>
           </div>
-
-          <div className="flex-1">
-            <Image
-              src="/img/decoration.webp"
-              alt="Profile Picture"
-              width={120}
-              height={120}
-              className="w-80 h-auto mx-auto rounded-2xl object-cover"
-            />
-          </div>
         </div>
-      </div>
+      </SectionBody>
 
       {/* What I do */}
       <SectionTitle>What I Can Help You With</SectionTitle>
@@ -99,24 +85,24 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
           {[
             {
               icon: "/img/icons/internet-option.webp",
-              title: "Website Development",
-              desc: "Building responsive and interactive websites from landing page to complex web apps using modern frameworks.",
+              title: "3D Web Experiences",
+              desc: "Building immersive Three.js scenes — company profiles, geospatial viewers, and interactive landing pages with real-time day/night cycles.",
               bg: "rgba(80,160,255,0.15)",
               border: "rgba(80,150,240,0.3)",
             },
             {
               icon: "/img/icons/system-restore.webp",
-              title: "Web App Optimization",
-              desc: "Optimizing existing web applications for better performance and user experience.",
+              title: "Full-Stack Applications",
+              desc: "Laravel + Next.js systems: from REST APIs and database design to React frontends deployed on production infra.",
               bg: "rgba(60,200,100,0.15)",
               border: "rgba(60,180,80,0.3)",
             },
             {
               icon: "/img/icons/synchronize.webp",
-              title: "System Integration",
-              desc: "Integrating third-party APIs and services to enhance functionality and streamline workflows.",
-              bg: "rgba(200,80,255,0.12)",
-              border: "rgba(180,80,240,0.3)",
+              title: "API & System Integration",
+              desc: "Connecting government data systems, third-party services, and map APIs — built for the Kalimantan geospatial platform and similar projects.",
+              bg: "rgba(60,185,220,0.12)",
+              border: "rgba(40,160,210,0.3)",
             },
           ].map(({ icon, title, desc, bg, border }) => (
             <div
@@ -150,7 +136,8 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
 
       <div className="mt-2.5 text-center">
         <GlossyButton variant="aqua" onClick={() => onTabChange("projects")}>
-          🗂 Browse All Projects →
+          <FolderOpen size={13} />
+          Browse All Projects
         </GlossyButton>
       </div>
     </div>

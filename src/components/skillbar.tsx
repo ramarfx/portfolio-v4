@@ -7,7 +7,7 @@ const FILL_STYLES: Record<Skill["fillColor"], string> = {
   blue: "from-sky-400 via-blue-500 to-blue-700",
   green: "from-green-400 via-green-500 to-green-700",
   aqua: "from-cyan-400 via-teal-500 to-teal-700",
-  purple: "from-violet-400 via-purple-500 to-purple-700",
+  purple: "from-slate-300 via-slate-400 to-slate-600",
 };
 
 const LEVEL_WIDTH = {

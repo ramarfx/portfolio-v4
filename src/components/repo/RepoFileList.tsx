@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SectionTitle } from "../ui/section-title";
+import { SectionTitle } from "../windows/ui/section-title";
 import type { Repo } from "@/data/repos";
 
 interface RepoFileListProps {
@@ -49,9 +49,9 @@ export function RepoFileList({
                 style={
                   isSelected
                     ? {
-                        background:
-                          "linear-gradient(90deg, rgba(185,215,252,0.6) 0%, rgba(155,195,245,0.4) 100%)",
-                      }
+                      background:
+                        "linear-gradient(90deg, rgba(185,215,252,0.6) 0%, rgba(155,195,245,0.4) 100%)",
+                    }
                     : undefined
                 }
                 onClick={() => onSelect(repo)}

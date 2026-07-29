@@ -1,8 +1,8 @@
 "use client";
 
 import { TabId } from "@/types/types";
-import { StatusDot } from "./ui/status-dot";
-import { Divider } from "./ui/divider";
+import { StatusDot } from "./windows/ui/status-dot";
+import { Divider } from "./windows/ui/divider";
 import { NAV_ITEMS } from "@/data/data";
 import Image from "next/image";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
@@ -60,10 +60,10 @@ export function Sidebar({
           <div className="px-3 py-3 text-center">
             <div className="relative mx-auto mb-2 flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl">
               <Image
-                src="/img/user.webp"
+                src="/img/mii-profile.png"
                 alt="User Avatar"
-                width={64}
-                height={64}
+                width={100}
+                height={100}
               />
             </div>
 
@@ -136,28 +136,19 @@ export function Sidebar({
               <a
                 href="https://instagram.com/ramtxh"
                 className="rounded-lg border border-blue-200/45 p-2 text-center"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(220,240,255,0.5) 100%)",
-                }}>
+                style={{ background: "var(--aero-social-card)" }}>
                 <SiInstagram size={16} className="mx-auto text-blue-500" />
               </a>
               <a
                 href="https://github.com/ramarfx"
                 className="rounded-lg border border-blue-200/45 p-2 text-center"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(220,240,255,0.5) 100%)",
-                }}>
+                style={{ background: "var(--aero-social-card)" }}>
                 <SiGithub size={16} className="mx-auto text-blue-500" />
               </a>
               <a
                 href="https://linkedin.com/in/ramarfx"
                 className="rounded-lg border border-blue-200/45 p-2 text-center"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(220,240,255,0.5) 100%)",
-                }}>
+                style={{ background: "var(--aero-social-card)" }}>
                 <Image
                   src="/img/icons/linkedin.svg"
                   alt="LinkedIn"

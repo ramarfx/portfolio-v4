@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AeroWindow } from "../ui/window";
-import { MenuBar } from "../ui/menu-bar";
+import { AeroWindow } from "./ui/window";
+import { MenuBar } from "./ui/menu-bar";
 
 export function ActivityWindow() {
   const [logs, setLogs] = useState<string[]>([]);
@@ -24,7 +24,7 @@ export function ActivityWindow() {
       icon="/img/icons/notepad.webp">
 
       {/* Menu Bar */}
-      <MenuBar/>
+      <MenuBar />
 
       {/* Content */}
       <div className="flex-1 bg-white p-2 overflow-scroll font-mono text-[12px] whitespace-pre-wrap max-h-[80dvh]">

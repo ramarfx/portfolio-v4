@@ -3,6 +3,33 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* ─── Frutiger Aero design tokens ─────────────────────────────── */
+  --aero-sky: #78B9F0;
+  --aero-sky-deep: #3282D2;
+  --aero-teal: #3CDCDC;
+  --aero-leaf: #60C840;
+  --aero-silver: #E8ECF0;
+  --aero-glass: rgba(255, 255, 255, 0.65);
+  --aero-glass-border: rgba(255, 255, 255, 0.6);
+  --aero-surface: #F0F8FF;
+  --aero-text: #1A3050;
+  --aero-text-muted: #5A7A9A;
+
+  /* Shared gradients — use these instead of copy-pasting inline */
+  --aero-gloss: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.15) 48%, transparent 49%);
+  --aero-surface-gradient: linear-gradient(180deg, rgba(255,255,255,0.70) 0%, rgba(220,240,255,0.55) 100%);
+  --aero-card-shadow: 0 2px 6px rgba(0, 80, 200, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --aero-social-card: linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(220,240,255,0.5) 100%);
+
+  /* Radius — Vista uses small radii, never pills on buttons */
+  --aero-radius-sm: 3px;
+  --aero-radius-md: 5px;
+  --aero-radius-lg: 8px;
+
+  /* Typography */
+  --aero-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --aero-font-display: "Trebuchet MS", "Segoe UI", sans-serif;
 }
 
 @theme inline {
@@ -40,24 +67,31 @@ a, button, [role="button"], label, select, summary, [tabindex]:not([tabindex="-1
         rgb(185, 225, 255) 100%);
   }
 
-  .crt-overlay {
-    pointer-events: none;
+  .crt::before {
+    content: " ";
+    display: block;
     position: fixed;
-    inset: 0;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
     z-index: 9999;
-    /* Efek CRT RGB Subpixel (Aperture Grille) */
-    background:
-      /* Garis hitam horizontal (scanline / pemisah piksel) */
-      /* linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px), */
-      /* RGB Subpixels vertikal yang jelas (Merah, Hijau, Biru) */
-      linear-gradient(180deg,
-        rgba(255, 0, 0, 0.12) 0%, rgba(255, 0, 0, 0.02) 33.33%,
-        rgba(0, 255, 0, 0.02) 33.33%, rgba(0, 255, 0, 0.02) 66.66%,
-        rgba(0, 0, 255, 0.02) 66.66%, rgba(0, 0, 255, 0.02) 100%),
-      /* Static noise/grain overlay */
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
-    background-size: 3px 3px, 3px 3px, 150px 150px;
-    mix-blend-mode: normal;
+    pointer-events: none;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%) 0% 0% / 100% 2px, linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)) 0% 0% / 3px 100%;
+  }
+
+  .crt::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background: rgba(18, 16, 16, 0.1);
   }
 
   .crt-vignette {
@@ -75,23 +109,17 @@ a, button, [role="button"], label, select, summary, [tabindex]:not([tabindex="-1
     box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.05), inset 0 0 15px rgba(255, 255, 255, 0.3);
     mix-blend-mode: normal;
   }
-
-  .crt-flicker {
-    /* Flicker refresh rate monitor (sangat cepat namun intensitasnya ringan) */
-    animation: crtFlicker 0.15s infinite;
-  }
 }
 
-@keyframes crtFlicker {
-  0% {
-    opacity: 1;
+/* CRT flicker — only run for users who have NOT opted out of motion */
+@media (prefers-reduced-motion: no-preference) {
+  .crt::after {
+    animation: 0.15s ease 0s infinite normal none running flicker;
   }
 
-  50% {
-    opacity: 0.8;
-  }
-
-  100% {
-    opacity: 1;
+  @keyframes flicker {
+    0% { opacity: 0.02; }
+    50% { opacity: 0.08; }
+    100% { opacity: 0.02; }
   }
 }
