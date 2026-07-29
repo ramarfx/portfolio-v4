@@ -41,21 +41,22 @@ export default function StartupLoader() {
 
   return (
     <div
-      className={`fixed inset-0 z-9999 flex items-center justify-center bg-[url('/img/bg-vista.webp')] bg-cover bg-center transition-opacity duration-700 ${phase === "done" ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+      className={`fixed inset-0 z-9999 flex items-center justify-center bg-[url('/img/bg-vista.webp')] bg-cover bg-center transition-opacity duration-700 ${phase === "done" ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+    >
       <div className="text-center select-none">
         {/* Avatar */}
         <div
           className="relative w-32 h-32 rounded-lg p-1 mx-auto mb-5"
           style={{
-            boxShadow:
-              "0 6px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9)",
-          }}>
+            boxShadow: "0 6px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9)",
+          }}
+        >
           <div
             className="relative w-full h-full rounded-xl overflow-hidden"
             style={{
-              boxShadow:
-                "inset 0 2px 4px rgba(0,0,0,0.3), inset 0 -2px 4px rgba(255,255,255,0.4)",
-            }}>
+              boxShadow: "inset 0 2px 4px rgba(0,0,0,0.3), inset 0 -2px 4px rgba(255,255,255,0.4)",
+            }}
+          >
             <Image
               src="/img/user.webp"
               alt="avatar"
@@ -77,9 +78,7 @@ export default function StartupLoader() {
 
         {/* Text */}
         <div className="mb-6 text-white text-2xl font-bold tracking-wider transition-all duration-300">
-          {phase === "loading"
-            ? "Starting Portfolio..."
-            : "Click anywhere to continue"}
+          {phase === "loading" ? "Starting Portfolio..." : "Click anywhere to continue"}
         </div>
 
         {/* Loading bar (hilang saat ready) */}

@@ -1,5 +1,18 @@
 import type { Project, Skill, NavItem, StatItem, Tools } from "@/types/types";
-import { SiBun, SiDocker, SiGit, SiLaravel, SiLinear, SiMysql, SiNestjs, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiSvelte, SiTailwindcss, SiThreedotjs, SiVuedotjs } from "@icons-pack/react-simple-icons";
+import {
+  SiBun,
+  SiDocker,
+  SiGit,
+  SiLaravel,
+  SiLinear,
+  SiNextdotjs,
+  SiPostgresql,
+  SiReact,
+  SiSvelte,
+  SiTailwindcss,
+  SiThreedotjs,
+  SiVuedotjs,
+} from "@icons-pack/react-simple-icons";
 
 export const PROJECTS: Project[] = [
   {
@@ -40,7 +53,9 @@ export const PROJECTS: Project[] = [
       { label: "ThreeJS", color: "green" },
       { label: "UI/UX Design", color: "aqua" },
     ],
-    links: [{ label: "Live Demo", variant: "blue", href: "https://geoportal-lautberkah.kalteng.go.id" }],
+    links: [
+      { label: "Live Demo", variant: "blue", href: "https://geoportal-lautberkah.kalteng.go.id" },
+    ],
   },
   {
     id: "3",
@@ -179,8 +194,7 @@ export const COMPETITION = [
   },
   {
     icon: "/img/icons/gear.webp",
-    title:
-      "1st Runner Up | Micro Influencer Gerakan Sekolah Sehat, National",
+    title: "1st Runner Up | Micro Influencer Gerakan Sekolah Sehat, National",
     sub: "Sagasitas - 2024",
   },
 ];

@@ -7,7 +7,7 @@ import { SectionBody } from "../windows/ui/section-body";
 import { SectionTitle } from "../windows/ui/section-title";
 import { StatusDot } from "../windows/ui/status-dot";
 import Image from "next/image";
-import { PROJECTS, STATS } from "@/data/data";
+import { PROJECTS } from "@/data/data";
 import { ProjectCard } from "../project-card";
 import { FileDown, FolderOpen, Info } from "lucide-react";
 
@@ -16,9 +16,7 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
     <div>
       <NotifBox variant="yellow">
         <Info size={14} className="shrink-0 mt-0.5" />
-        <span>
-          Yo! Welcome to my portfolio. Take a look around!
-        </span>
+        <span>Yo! Welcome to my portfolio. Take a look around!</span>
       </NotifBox>
 
       {/* About Section */}
@@ -45,7 +43,8 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
               <StatusDot />
               <h1
                 className="font-[Trebuchet_MS,sans-serif] text-[18px] font-bold text-blue-950"
-                style={{ textShadow: "0 1px 0 rgba(255,255,255,0.85)" }}>
+                style={{ textShadow: "0 1px 0 rgba(255,255,255,0.85)" }}
+              >
                 Ramadina Al Muzthazam
               </h1>
             </div>
@@ -53,21 +52,19 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
               Fullstack Web Developer &nbsp;·&nbsp; UPN Veteran Jakarta
             </p>
             <p className="text-[12px] leading-relaxed text-blue-900 max-w-lg mb-3">
-              Fullstack Web Developer experienced building scalable web
-              applications and interactive 3D web experiences using React,
-              Three.js, Laravel. Experienced in backend architecture, API
-              optimization, and WebGL-based frontend development.
+              Fullstack Web Developer experienced building scalable web applications and interactive
+              3D web experiences using React, Three.js, Laravel. Experienced in backend
+              architecture, API optimization, and WebGL-based frontend development.
             </p>
             <div className="flex flex-wrap gap-2">
-              <GlossyButton
-                variant="blue"
-                onClick={() => onTabChange("projects")}>
+              <GlossyButton variant="blue" onClick={() => onTabChange("projects")}>
                 View Projects
               </GlossyButton>
               <a
                 href="https://docs.google.com/document/d/1f-NoblChbnZom8KwiuL7IV2tz4sS_cGY-6h8uULgmIc/edit?tab=t.0"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 <GlossyButton variant="silver">
                   <FileDown size={12} />
                   Download CV
@@ -111,16 +108,13 @@ export function HomeTab({ onTabChange }: { onTabChange: (t: TabId) => void }) {
               style={{
                 background: `linear-gradient(180deg, white, ${bg})`,
                 border: `1px solid ${border}`,
-              }}>
+              }}
+            >
               <div className="mb-1.5 text-2xl mx-auto inline-block">
                 <Image src={icon} alt={title} width={40} height={40} />
               </div>
-              <p className="mb-1 text-[11px] font-bold text-blue-900">
-                {title}
-              </p>
-              <p className="text-[10px] leading-relaxed text-blue-700">
-                {desc}
-              </p>
+              <p className="mb-1 text-[11px] font-bold text-blue-900">{title}</p>
+              <p className="text-[10px] leading-relaxed text-blue-700">{desc}</p>
             </div>
           ))}
         </div>

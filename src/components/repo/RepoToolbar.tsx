@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  LayoutGrid,
-  Menu,
-  RefreshCcw,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUp, LayoutGrid, Menu, RefreshCcw } from "lucide-react";
 
 interface RepoToolbarProps {
   isSidebarCollapsed: boolean;
@@ -28,7 +21,8 @@ export function RepoToolbar({
       style={{
         background:
           "linear-gradient(180deg, rgba(250,252,255,0.95) 0%, rgba(240,245,252,0.95) 100%)",
-      }}>
+      }}
+    >
       {/* Nav buttons */}
       <button
         className={[
@@ -39,7 +33,8 @@ export function RepoToolbar({
         style={{
           background:
             "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,252,0.9) 100%)",
-        }}>
+        }}
+      >
         <ArrowLeft size={14} />
       </button>
       <button
@@ -51,7 +46,8 @@ export function RepoToolbar({
         style={{
           background:
             "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,252,0.9) 100%)",
-        }}>
+        }}
+      >
         <ArrowRight size={14} />
       </button>
       <button
@@ -63,7 +59,8 @@ export function RepoToolbar({
         style={{
           background:
             "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,252,0.9) 100%)",
-        }}>
+        }}
+      >
         <ArrowUp size={14} />
       </button>
       <button
@@ -75,7 +72,8 @@ export function RepoToolbar({
         style={{
           background:
             "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,252,0.9) 100%)",
-        }}>
+        }}
+      >
         <RefreshCcw size={14} />
       </button>
 
@@ -90,7 +88,8 @@ export function RepoToolbar({
           background:
             "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,252,0.9) 100%)",
         }}
-        onClick={onToggleSidebar}>
+        onClick={onToggleSidebar}
+      >
         {isSidebarCollapsed ? "☰ Show" : "✕ Hide"} Sidebar
       </button>
 
@@ -112,7 +111,8 @@ export function RepoToolbar({
         style={{
           background:
             "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,252,0.9) 100%)",
-        }}>
+        }}
+      >
         🔍 Search
       </button>
 
@@ -136,7 +136,8 @@ export function RepoToolbar({
               viewMode === "list"
                 ? "linear-gradient(180deg, rgba(185,215,252,0.7) 0%, rgba(155,195,245,0.6) 100%)"
                 : "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,252,0.9) 100%)",
-          }}>
+          }}
+        >
           <Menu size={14} />
         </button>
         <button
@@ -153,7 +154,8 @@ export function RepoToolbar({
               viewMode === "grid"
                 ? "linear-gradient(180deg, rgba(185,215,252,0.7) 0%, rgba(155,195,245,0.6) 100%)"
                 : "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,252,0.9) 100%)",
-          }}>
+          }}
+        >
           <LayoutGrid size={14} />
         </button>
       </div>

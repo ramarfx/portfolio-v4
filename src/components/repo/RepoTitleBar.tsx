@@ -11,8 +11,7 @@ export function RepoTitleBar({ title }: RepoTitleBarProps) {
       style={{
         background:
           "linear-gradient(180deg, rgba(185,215,252,0.95) 0%, rgba(155,195,245,0.95) 50%, rgba(125,175,240,0.95) 100%)",
-        boxShadow:
-          "inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.1)",
+        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.1)",
       }}
     >
       {/* Icon + Title */}

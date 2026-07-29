@@ -16,16 +16,8 @@ export default function Home() {
           text="My Portfolio"
         />
 
-        <DesktopShortcut
-          id="repository"
-          icon="/img/icons/file.webp"
-          text="File Explorer"
-        />
-        <DesktopShortcut
-          id="activity"
-          icon="/img/icons/notepad.webp"
-          text="Log activity"
-        />
+        <DesktopShortcut id="repository" icon="/img/icons/file.webp" text="File Explorer" />
+        <DesktopShortcut id="activity" icon="/img/icons/notepad.webp" text="Log activity" />
       </div>
 
       {/* window */}

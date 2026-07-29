@@ -17,38 +17,44 @@ This skill defines the "Frutiger Aero" visual language — the design aesthetic 
 ## Core Design Principles
 
 ### 1. Glossy, Not Flat
+
 Every interactive surface should suggest physical depth. The key technique is a **two-zone gradient**: a lighter upper half (the "gloss") sharply transitioning to a slightly darker lower half. This creates the illusion of a convex surface catching overhead light.
 
 ### 2. Translucent, Not Opaque
+
 Backgrounds should feel like frosted glass — you can sense the content or color behind them, but can't read it clearly. Use `backdrop-filter: blur()` and semi-transparent backgrounds (`rgba` with 60–85% opacity).
 
 ### 3. Nature-Grounded Palette
+
 Colors come from sky, water, and foliage — not from neon nightclub aesthetics. The palette is optimistic, clean, and slightly cool.
 
 ### 4. Skeuomorphic Details, Used Sparingly
+
 Bevels, inner glows, reflections, and highlights reference physical materials (glass, metal, water). But apply them **selectively** — only on interactive elements and key visual surfaces. Body text areas and content zones stay clean.
 
 ### 5. Humanist Typography
+
 Use clean, geometric-humanist sans-serifs. Segoe UI is the canonical choice. Text should be readable against translucent backgrounds — use text-shadow for legibility when placing text on glass.
 
 ---
 
 ## Color Palette
 
-| Token | Hex | Usage |
-|-------|-----|-------|
-| `--aero-sky` | `#78B9F0` | Primary blue — taskbar, title bars, interactive accents |
-| `--aero-sky-deep` | `#3282D2` | Darker blue — active states, pressed buttons |
-| `--aero-teal` | `#3CDCDC` | Secondary accent — aqua tints, links, highlights |
-| `--aero-leaf` | `#60C840` | Success states, "available" indicators, green buttons |
-| `--aero-silver` | `#E8ECF0` | Neutral surface — inactive buttons, borders, dividers |
-| `--aero-glass` | `rgba(255,255,255,0.65)` | Glass panel background |
-| `--aero-glass-border` | `rgba(255,255,255,0.6)` | Glass panel edge highlight |
-| `--aero-surface` | `#F0F8FF` | Content area background (alice blue) |
-| `--aero-text` | `#1A3050` | Primary text color — dark desaturated blue |
-| `--aero-text-muted` | `#5A7A9A` | Secondary text, captions |
+| Token                 | Hex                      | Usage                                                   |
+| --------------------- | ------------------------ | ------------------------------------------------------- |
+| `--aero-sky`          | `#78B9F0`                | Primary blue — taskbar, title bars, interactive accents |
+| `--aero-sky-deep`     | `#3282D2`                | Darker blue — active states, pressed buttons            |
+| `--aero-teal`         | `#3CDCDC`                | Secondary accent — aqua tints, links, highlights        |
+| `--aero-leaf`         | `#60C840`                | Success states, "available" indicators, green buttons   |
+| `--aero-silver`       | `#E8ECF0`                | Neutral surface — inactive buttons, borders, dividers   |
+| `--aero-glass`        | `rgba(255,255,255,0.65)` | Glass panel background                                  |
+| `--aero-glass-border` | `rgba(255,255,255,0.6)`  | Glass panel edge highlight                              |
+| `--aero-surface`      | `#F0F8FF`                | Content area background (alice blue)                    |
+| `--aero-text`         | `#1A3050`                | Primary text color — dark desaturated blue              |
+| `--aero-text-muted`   | `#5A7A9A`                | Secondary text, captions                                |
 
 ### Forbidden Colors
+
 - ❌ Purple/violet gradients (`#7C3AED`, `#A855F7`, etc.) — not in the Aero palette
 - ❌ Hot pink / magenta — modern accent, breaks era authenticity
 - ❌ Pure black backgrounds — Aero is always light or translucent
@@ -61,16 +67,16 @@ Use clean, geometric-humanist sans-serifs. Segoe UI is the canonical choice. Tex
 ```css
 :root {
   /* Frutiger Aero tokens */
-  --aero-sky: #78B9F0;
-  --aero-sky-deep: #3282D2;
-  --aero-teal: #3CDCDC;
-  --aero-leaf: #60C840;
-  --aero-silver: #E8ECF0;
+  --aero-sky: #78b9f0;
+  --aero-sky-deep: #3282d2;
+  --aero-teal: #3cdcdc;
+  --aero-leaf: #60c840;
+  --aero-silver: #e8ecf0;
   --aero-glass: rgba(255, 255, 255, 0.65);
   --aero-glass-border: rgba(255, 255, 255, 0.6);
-  --aero-surface: #F0F8FF;
-  --aero-text: #1A3050;
-  --aero-text-muted: #5A7A9A;
+  --aero-surface: #f0f8ff;
+  --aero-text: #1a3050;
+  --aero-text-muted: #5a7a9a;
 
   /* Shared gradients */
   --aero-gloss: linear-gradient(
@@ -81,11 +87,10 @@ Use clean, geometric-humanist sans-serifs. Segoe UI is the canonical choice. Tex
   );
   --aero-surface-gradient: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.70) 0%,
+    rgba(255, 255, 255, 0.7) 0%,
     rgba(220, 240, 255, 0.55) 100%
   );
-  --aero-card-shadow: 0 2px 6px rgba(0, 80, 200, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --aero-card-shadow: 0 2px 6px rgba(0, 80, 200, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 
   /* Typography */
   --aero-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -124,10 +129,10 @@ Vista-era buttons are **never pill-shaped** (`rounded-full`). They use small bor
   /* Blue variant */
   background: linear-gradient(
     180deg,
-    #6CC5F8 0%,    /* lighter top */
-    #3A9FE0 48%,   /* mid transition */
-    #2580C8 49%,   /* darker bottom start */
-    #4098D8 100%   /* slight lift at very bottom */
+    #6cc5f8 0%,
+    /* lighter top */ #3a9fe0 48%,
+    /* mid transition */ #2580c8 49%,
+    /* darker bottom start */ #4098d8 100% /* slight lift at very bottom */
   );
   color: white;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
@@ -167,8 +172,10 @@ Vista-era buttons are **never pill-shaped** (`rounded-full`). They use small bor
 ```
 
 **Tailwind equivalent** (using arbitrary values sparingly):
+
 ```html
-<button class="
+<button
+  class="
   relative inline-flex items-center gap-1.5
   rounded-[4px] border border-blue-400/30
   bg-gradient-to-b from-sky-400 via-blue-500 to-blue-600
@@ -177,10 +184,13 @@ Vista-era buttons are **never pill-shaped** (`rounded-full`). They use small bor
   hover:shadow-[0_4px_12px_rgba(0,100,200,0.4)]
   active:translate-y-px
   overflow-hidden cursor-pointer
-">
+"
+>
   <!-- Gloss pseudo-element via a span -->
-  <span class="pointer-events-none absolute inset-0 rounded-[4px]"
-    style="background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.1) 48%, transparent 49%)">
+  <span
+    class="pointer-events-none absolute inset-0 rounded-[4px]"
+    style="background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.1) 48%, transparent 49%)"
+  >
   </span>
   <span class="relative z-10">Button Text</span>
 </button>
@@ -188,12 +198,12 @@ Vista-era buttons are **never pill-shaped** (`rounded-full`). They use small bor
 
 ### Button Variants
 
-| Variant | Top color | Bottom color | Border |
-|---------|-----------|-------------|--------|
-| Blue | `#6CC5F8` | `#2580C8` | `rgba(0,80,160,0.3)` |
-| Green | `#7CD860` | `#38A020` | `rgba(0,100,0,0.3)` |
-| Silver | `#F0F2F5` | `#C8CDD5` | `rgba(100,120,140,0.3)` |
-| Aqua | `#60E8E8` | `#208080` | `rgba(0,100,100,0.3)` |
+| Variant | Top color | Bottom color | Border                  |
+| ------- | --------- | ------------ | ----------------------- |
+| Blue    | `#6CC5F8` | `#2580C8`    | `rgba(0,80,160,0.3)`    |
+| Green   | `#7CD860` | `#38A020`    | `rgba(0,100,0,0.3)`     |
+| Silver  | `#F0F2F5` | `#C8CDD5`    | `rgba(100,120,140,0.3)` |
+| Aqua    | `#60E8E8` | `#208080`    | `rgba(0,100,100,0.3)`   |
 
 ---
 
@@ -212,11 +222,7 @@ Vista-era buttons are **never pill-shaped** (`rounded-full`). They use small bor
 .aero-card-header {
   position: relative;
   padding: 10px 14px;
-  background: linear-gradient(
-    180deg,
-    rgba(200, 230, 255, 0.6) 0%,
-    rgba(170, 210, 250, 0.4) 100%
-  );
+  background: linear-gradient(180deg, rgba(200, 230, 255, 0.6) 0%, rgba(170, 210, 250, 0.4) 100%);
   border-bottom: 1px solid rgba(100, 160, 220, 0.2);
 }
 
@@ -224,11 +230,7 @@ Vista-era buttons are **never pill-shaped** (`rounded-full`). They use small bor
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    transparent 60%
-  );
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
   pointer-events: none;
 }
 ```
@@ -253,7 +255,7 @@ The Aero navbar uses the **glass effect**: a semi-transparent background with ba
     180deg,
     rgba(120, 185, 240, 0.75) 0%,
     rgba(80, 155, 220, 0.85) 48%,
-    rgba(50, 130, 210, 0.90) 49%,
+    rgba(50, 130, 210, 0.9) 49%,
     rgba(70, 150, 230, 0.82) 100%
   );
   backdrop-filter: blur(24px) saturate(2);
@@ -271,11 +273,11 @@ The Aero navbar uses the **glass effect**: a semi-transparent background with ba
   height: 2px;
   background: linear-gradient(
     90deg,
-    rgba(255,255,255,0.2),
-    rgba(255,255,255,0.8) 30%,
-    rgba(255,255,255,0.9) 50%,
-    rgba(255,255,255,0.8) 70%,
-    rgba(255,255,255,0.2)
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.8) 70%,
+    rgba(255, 255, 255, 0.2)
   );
 }
 ```
@@ -292,13 +294,15 @@ Vista inputs are subtly inset with a slight gradient from white to very light bl
   padding: 5px 8px;
   border: 1px solid rgba(100, 160, 220, 0.4);
   border-radius: var(--aero-radius-sm);
-  background: linear-gradient(180deg, #FFFFFF 0%, #F0F8FF 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f8ff 100%);
   font-family: var(--aero-font);
   font-size: 11px;
   color: var(--aero-text);
   box-shadow: inset 0 1px 2px rgba(0, 0, 80, 0.1);
   outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
 
 .aero-input:focus {
@@ -314,6 +318,7 @@ Vista inputs are subtly inset with a slight gradient from white to very light bl
 ## Background & Texture Guidelines
 
 ### Acceptable background motifs:
+
 - **Sky gradients** — blue to white, slightly overexposed like a bright day
 - **Water / bubbles** — translucent spheres, ripple patterns
 - **Foliage** — green leaves, grass, with gentle bokeh blur
@@ -321,6 +326,7 @@ Vista inputs are subtly inset with a slight gradient from white to very light bl
 - **Aurora / northern lights** — subtle, cool-toned bands of light
 
 ### Avoid:
+
 - Dark/moody backgrounds (cyberpunk, space, etc.)
 - Geometric pattern fills (hexagons, triangles)
 - Flat solid colors as primary backgrounds
@@ -329,12 +335,12 @@ Vista inputs are subtly inset with a slight gradient from white to very light bl
 
 ## Typography Rules
 
-| Role | Font | Weight | Size |
-|------|------|--------|------|
-| Display / headings | Trebuchet MS or Segoe UI | Bold (700) | 18–22px |
-| Body text | Segoe UI | Regular (400) | 11–13px |
-| Captions / metadata | Segoe UI | Regular (400) | 9–10px |
-| Code / monospace | Consolas, Courier New | Regular (400) | 11px |
+| Role                | Font                     | Weight        | Size    |
+| ------------------- | ------------------------ | ------------- | ------- |
+| Display / headings  | Trebuchet MS or Segoe UI | Bold (700)    | 18–22px |
+| Body text           | Segoe UI                 | Regular (400) | 11–13px |
+| Captions / metadata | Segoe UI                 | Regular (400) | 9–10px  |
+| Code / monospace    | Consolas, Courier New    | Regular (400) | 11px    |
 
 - Use **text-shadow** (`0 1px 0 rgba(255,255,255,0.7)`) on headings placed on gradient backgrounds for that embossed look.
 - Never use ultra-thin weights (100–200) — they didn't exist in the Vista era and reduce readability on glass surfaces.
@@ -378,16 +384,8 @@ The classic Aero dock reflection: a faded, vertically flipped copy below an elem
   height: 30%;
   background: inherit;
   transform: scaleY(-1);
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15),
-    transparent 80%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15),
-    transparent 80%
-  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), transparent 80%);
   pointer-events: none;
 }
 ```

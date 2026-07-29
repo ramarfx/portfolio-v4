@@ -15,12 +15,7 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-export function Sidebar({
-  activeTab,
-  onTabChange,
-  isOpen,
-  onClose,
-}: SidebarProps) {
+export function Sidebar({ activeTab, onTabChange, isOpen, onClose }: SidebarProps) {
   return (
     <>
       {/* Overlay (Mobile) */}
@@ -43,7 +38,8 @@ export function Sidebar({
           background:
             "linear-gradient(180deg, rgba(255,255,255,0.70) 0%, rgba(220,240,255,0.55) 100%)",
           boxShadow: "inset -1px 0 0 rgba(100,160,220,0.2)",
-        }}>
+        }}
+      >
         <div className="sticky top-0 h-fit border-r border-white/60">
           {/* Header */}
           <div className="border-b border-blue-400/30 px-2.5 py-1.5 text-[11px] font-bold text-blue-900 bg-gradient-blue flex items-center justify-between rounded-t-md">
@@ -59,17 +55,10 @@ export function Sidebar({
           {/* Avatar */}
           <div className="px-3 py-3 text-center">
             <div className="relative mx-auto mb-2 flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl">
-              <Image
-                src="/img/mii-profile.png"
-                alt="User Avatar"
-                width={100}
-                height={100}
-              />
+              <Image src="/img/mii-profile.png" alt="User Avatar" width={100} height={100} />
             </div>
 
-            <p className="text-[12px] font-bold text-blue-900">
-              Ramadina Al Muzthazam
-            </p>
+            <p className="text-[12px] font-bold text-blue-900">Ramadina Al Muzthazam</p>
 
             <p className="mt-0.5 flex items-center justify-center gap-1 text-[10px] text-green-700">
               <StatusDot /> Online
@@ -96,13 +85,9 @@ export function Sidebar({
                     isActive
                       ? "border-blue-500 bg-blue-100/30 font-bold text-blue-900"
                       : "border-transparent text-blue-800 hover:border-blue-300 hover:bg-blue-100/20",
-                  ].join(" ")}>
-                  <Image
-                    src={item.icon}
-                    alt={item.label}
-                    width={16}
-                    height={16}
-                  />
+                  ].join(" ")}
+                >
+                  <Image src={item.icon} alt={item.label} width={16} height={16} />
                   {item.label}
                 </button>
               );
@@ -113,13 +98,9 @@ export function Sidebar({
               rel="noopener noreferrer"
               className={
                 "flex w-full items-center gap-1.5 border-l-[3px] px-3 py-1.5 text-[11px] border-transparent text-blue-800 hover:border-blue-300 hover:bg-blue-100/20"
-              }>
-              <Image
-                src={"/img/icons/file.webp"}
-                alt={"CV"}
-                width={16}
-                height={16}
-              />
+              }
+            >
+              <Image src={"/img/icons/file.webp"} alt={"CV"} width={16} height={16} />
               Download CV
             </a>
           </nav>
@@ -136,19 +117,22 @@ export function Sidebar({
               <a
                 href="https://instagram.com/ramtxh"
                 className="rounded-lg border border-blue-200/45 p-2 text-center"
-                style={{ background: "var(--aero-social-card)" }}>
+                style={{ background: "var(--aero-social-card)" }}
+              >
                 <SiInstagram size={16} className="mx-auto text-blue-500" />
               </a>
               <a
                 href="https://github.com/ramarfx"
                 className="rounded-lg border border-blue-200/45 p-2 text-center"
-                style={{ background: "var(--aero-social-card)" }}>
+                style={{ background: "var(--aero-social-card)" }}
+              >
                 <SiGithub size={16} className="mx-auto text-blue-500" />
               </a>
               <a
                 href="https://linkedin.com/in/ramarfx"
                 className="rounded-lg border border-blue-200/45 p-2 text-center"
-                style={{ background: "var(--aero-social-card)" }}>
+                style={{ background: "var(--aero-social-card)" }}
+              >
                 <Image
                   src="/img/icons/linkedin.svg"
                   alt="LinkedIn"

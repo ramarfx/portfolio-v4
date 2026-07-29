@@ -31,15 +31,8 @@ export const PortfolioWindow = () => {
   return (
     <section>
       {/* ── MAIN BROWSER WINDOW ── */}
-      <AeroWindow
-        id="portofolio"
-        title="Internet Explorer"
-        icon="/img/icons/edge.webp">
-        <BrowserChrome
-          activeTab={activeTab}
-          onTabChange={setActiveTab}
-          setIsOpen={setIsOpen}
-        />
+      <AeroWindow id="portofolio" title="Internet Explorer" icon="/img/icons/edge.webp">
+        <BrowserChrome activeTab={activeTab} onTabChange={setActiveTab} setIsOpen={setIsOpen} />
 
         {/* Body */}
         <div className="flex min-h-[80svh] h-full">
@@ -52,9 +45,7 @@ export const PortfolioWindow = () => {
           />
 
           {/* Content */}
-          <div className="bg-white/62 p-4 backdrop-blur-sm flex-1">
-            {renderTab()}
-          </div>
+          <div className="bg-white/62 p-4 backdrop-blur-sm flex-1">{renderTab()}</div>
         </div>
 
         <StatusBar />

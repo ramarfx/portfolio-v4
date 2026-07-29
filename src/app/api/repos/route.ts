@@ -1,18 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextResponse } from "next/server";
 
-
 export async function GET() {
   try {
-    const res = await fetch(
-      "https://api.github.com/users/ramarfx/repos?sort=updated",
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-        },
-        next: { revalidate: 60 }, // cache 60 detik
-      }
-    );
+    const res = await fetch("https://api.github.com/users/ramarfx/repos?sort=updated", {
+      headers: {
+        Accept: "application/vnd.github+json",
+      },
+      next: { revalidate: 60 }, // cache 60 detik
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch repos");
@@ -24,15 +20,15 @@ export async function GET() {
       name: repo.name,
       updated: new Date(repo.updated_at).toLocaleDateString(),
       url: repo.html_url,
-      description: repo.description ?? '-',
-      size: formatSize(repo.size)
+      description: repo.description ?? "-",
+      size: formatSize(repo.size),
     }));
 
     return NextResponse.json(repos);
   } catch (error) {
     return NextResponse.json(
       { message: "Error fetching repositories", errors: error },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
