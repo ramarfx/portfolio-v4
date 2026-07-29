@@ -4,6 +4,89 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+# Project Overview
+
+- **Next.js 16** (app router), **React 19**, **TypeScript 5**, **Tailwind CSS v4**
+- **Package manager**: `bun` (see `bun.lock`)
+- **No testing framework** — no Jest, Vitest, Playwright, or any test runner
+- **No pre-commit hooks, no CI/CD** — no `.github/workflows/`, no husky, no lint-staged
+- **Deployed on Vercel** at `https://ramarfx.my.id`
+
+# Developer Commands
+
+```sh
+bun dev         # next dev (HMR on http://localhost:3000)
+bun run build   # next build
+bun run start   # next start (prod server)
+bun run lint    # eslint (no --fix flag in the script)
+```
+
+There is no `typecheck` script. To type-check: `npx tsc --noEmit`.
+There is no test script. There are no tests.
+
+# Architecture
+
+**Single-page app** — one route (`/`) with client-side tab switching between Home, Projects, Skills, Contact.
+
+```
+src/
+├── app/
+│   ├── layout.tsx        ← Root layout (server component): WindowProvider, background, CRT overlay, Taskbar
+│   ├── page.tsx          ← "use client": 3 DesktopShortcuts + 3 AeroWindows
+│   ├── globals.css       ← Tailwind v4 import + Aero design tokens (--aero-* CSS vars)
+│   ├── aero.css          ← Windows 7 glass styles (commented out in layout — may reinstate)
+│   ├── sitemap.ts        ← Dynamic sitemap
+│   ├── robots.ts         ← robots.txt
+│   └── api/
+│       ├── repos/route.ts    ← GET /api/repos — fetches ramarfx repos (no auth, public GitHub)
+│       └── activity/route.ts ← GET /api/activity — fetches ramarfx events (uses GITHUB_TOKEN)
+├── components/
+│   ├── startup-loader.tsx    ← Splash screen → click to open Portfolio window
+│   ├── taskbar.tsx           ← Vista-style taskbar
+│   ├── sidebar.tsx           ← Left nav (avatar, tabs, social links, CV download)
+│   ├── browser.tsx           ← IE toolbar + address bar + tab bar
+│   ├── project-card.tsx      ← Project card
+│   ├── skillbar.tsx          ← Animated skill bar
+│   ├── tabs/                 ← Tab content panels (home-tab, project-tab, skills-tab, contact-tab)
+│   ├── windows/              ← Three AeroWindows: PortfolioWindow, RepoWindow, ActivityWindow (Notepad)
+│   │   └── ui/               ← Aero primitives: AeroWindow, GlossyButton, Tag, SectionTitle, etc.
+│   └── repo/                 ← File Explorer subcomponents (RepoToolbar, RepoFileList, RepoSidebar, etc.)
+├── context/
+│   └── window-manager.tsx    ← WindowProvider + useWindow() hook — manages 3 window states (open/close/maximize)
+├── data/
+│   ├── data.tsx              ← Static arrays: PROJECTS, SKILLS, TOOLS, NAV_ITEMS, TABS, COMPETITION
+│   └── repos.ts              ← Repo sidebar data (SIDEBAR_FAVORITES, SIDEBAR_FOLDERS)
+├── types/types.ts            ← TabId, Project, Skill, NavItem, StatItem, Tools
+└── libs/utils.ts             ← cn() — clsx + tailwind-merge
+```
+
+**Path alias**: `@/*` maps to `./src/*` (configured in tsconfig.json).
+
+**State management**: Single React context (`WindowProvider`). Window IDs: `"portofolio"`, `"repository"`, `"activity"`.
+
+**Data flow**: Static data arrays in `src/data/data.tsx`. Two API routes fetch GitHub data with `next: { revalidate: 60 }`.
+
+**API routes**: `/api/repos` (no auth, public rate limit), `/api/activity` (requires `GITHUB_TOKEN` env var for higher rate limit).
+
+# Environment Variables
+
+| Variable | Used In | Required |
+|---|---|---|
+| `GITHUB_TOKEN` | `src/app/api/activity/route.ts` | Yes (for activity endpoint to avoid rate limiting) |
+| `NEXT_PUBLIC_GOOGLE_VERIFICATION` | `src/app/layout.tsx` | Yes (for Google Search Console) |
+
+Both are committed in `.env` (dev convenience — do not expose in production).
+
+# Known Gotchas
+
+- **`src/components-old/`** — 4 empty subdirectories, no imports anywhere. Dead code.
+- **`src/app/aero.css`** — Contains Windows 7 glass window styles. Import is **commented out** in `layout.tsx`. If the glass effect is missing, uncomment `import "./aero.css"` in layout.
+- **`RepoTitleBar`** — Exists at `src/components/repo/RepoTitleBar.tsx` but **unused**. `AeroWindow` provides its own title bar via 7.css.
+- **`repos.ts` sidebar data** — Uses emoji characters (`"⭐"`, `"📁"`) violating the "no emoji as icons" rule. Should use `lucide-react` or `.webp` icons.
+- **Spelling inconsistency**: Desktop shortcut says "My Portfolio" but window `id` is `"portofolio"` (misspelled) and the shortcut says "Log activity" (inconsistent capitalization).
+- **Dark mode**: CSS vars switch for dark mode in `globals.css` (lines 42-47) — but the app is designed for a Vista light aesthetic with a fixed background image, so dark mode may look broken.
+- **Cursor SVGs**: Referenced in commented-out CSS (`cursor-normal.svg`, `cursor-pointer.svg`) — check if these files exist in `public/img/` before uncommenting.
+
 <!-- BEGIN:design-system-rules -->
 # Design System — Frutiger Aero & Tailwind CSS v4
 
@@ -26,10 +109,10 @@ Always adhere to Tailwind CSS v4 conventions and canonical utility classes:
 
 - **Use canonical utility classes over arbitrary values (`suggestCanonicalClasses`)**:
   - Do NOT use arbitrary bracket notation (e.g. `w-[10px]`, `p-[16px]`, `m-[8px]`, `gap-[12px]`) when a canonical Tailwind spacing/size class exists.
-  - ❌ `w-[10px]` (SALAH) → ✅ `w-2.5` (BENAR)
-  - ❌ `p-[16px]` (SALAH) → ✅ `p-4` (BENAR)
-  - ❌ `m-[8px]` (SALAH) → ✅ `m-2` (BENAR)
-  - ❌ `gap-[12px]` (SALAH) → ✅ `gap-3` (BENAR)
+  - ❌ `w-[10px]` → ✅ `w-2.5`
+  - ❌ `p-[16px]` → ✅ `p-4`
+  - ❌ `m-[8px]` → ✅ `m-2`
+  - ❌ `gap-[12px]` → ✅ `gap-3`
   - Only use arbitrary values `[...]` when a specific value has no canonical Tailwind unit equivalent (e.g. `min-h-[80svh]`) or for custom CSS property variables.
 - **v4 Utility Names**:
   - `shrink-*` instead of `flex-shrink-*`
@@ -47,16 +130,16 @@ Before finalizing any UI change, verify ALL of the following:
 
 - [ ] **Canonical Tailwind classes used** — No unnecessary arbitrary values (`w-[10px]` → `w-2.5`).
 - [ ] **Tailwind CSS v4 syntax followed** — Correct utility names (`shrink-*`, `outline-hidden`, explicit border colors).
-- [ ] **No emoji as icons** — Use `lucide-react` icons or custom Vista `.webp` icons from `public/img/icons/`. Never use emoji characters (💡🔒🏆📨🗂📄 etc.) as icons.
-- [ ] **No purple/violet gradients** — Stay within the Aero palette: sky blue, teal, green, silver. No `purple`, `violet`, `fuchsia`, `pink` Tailwind colors.
+- [ ] **No emoji as icons** — Use `lucide-react` icons or custom Vista `.webp` icons from `public/img/icons/`.
+- [ ] **No purple/violet gradients** — Stay within the Aero palette: sky blue, teal, green, silver.
 - [ ] **No `rounded-full` on buttons** — Buttons use `rounded-[3px]` to `rounded-[5px]`. Only tags/badges may use `rounded-full`.
-- [ ] **No generic AI microcopy** — Avoid "passionate", "seamless experience", "unlock the power of", "elevate your", "beautiful digital experiences". Write specific, concrete copy.
-- [ ] **No inline style duplication** — Shared gradients/shadows must use CSS custom properties defined in `globals.css`, not copied inline across components.
-- [ ] **Contrast preserved (WCAG AA)** — Text on translucent backgrounds must have ≥4.5:1 contrast ratio. Test with browser devtools.
-- [ ] **`prefers-reduced-motion` respected** — All CSS animations and JS-driven motion must degrade gracefully with `prefers-reduced-motion: reduce`.
-- [ ] **No stock/AI illustrations** — Use actual Windows Vista-era icons or consistent custom iconography. No rocket ships, lightbulbs, or generic SVG illustrations.
-- [ ] **Border-radius consistency** — Use `--aero-radius-sm` (3px), `--aero-radius-md` (5px), or `--aero-radius-lg` (8px). Never `rounded-2xl` or `rounded-3xl` in this project.
-- [ ] **Correct spelling** — "Portfolio" (English) or "Portofolio" (Indonesian) — pick one and be consistent project-wide. Check for "2st" → "2nd" and similar typos.
+- [ ] **No generic AI microcopy** — Avoid "passionate", "seamless experience", "unlock the power of", etc.
+- [ ] **No inline style duplication** — Shared gradients/shadows must use CSS custom properties in `globals.css`.
+- [ ] **Contrast preserved (WCAG AA)** — Text on translucent backgrounds must have ≥4.5:1 contrast.
+- [ ] **`prefers-reduced-motion` respected** — Animations/motion must degrade gracefully.
+- [ ] **No stock/AI illustrations** — Use Vista-era icons or custom iconography.
+- [ ] **Border-radius consistency** — Use `--aero-radius-sm` (3px), `--aero-radius-md` (5px), or `--aero-radius-lg` (8px).
+- [ ] **Correct spelling** — "Portfolio" (English) or "Portofolio" (Indonesian) — pick one, be consistent.
 
 ## Component & Folder Conventions
 
