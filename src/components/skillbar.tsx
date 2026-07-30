@@ -14,6 +14,7 @@ const LEVEL_WIDTH = {
   Beginner: 33,
   Intermediate: 66,
   Advanced: 100,
+  Native: 100,
 };
 
 interface SkillBarProps {

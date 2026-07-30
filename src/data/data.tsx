@@ -16,6 +16,20 @@ import {
 
 export const PROJECTS: Project[] = [
   {
+    id: "7",
+    title: "SIERA",
+    image: "/projects/siera.png",
+    description:
+      "A comprehensive platform built for PATRIBERA that centralizes information management, simplifies participant tracking, and optimizes user registration and certification workflows.",
+    tags: [
+      { label: "React Vite+", color: "blue" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "TypeScript", color: "blue" },
+      { label: "Hono", color: "blue" },
+    ],
+    links: [{ label: "View Platform", variant: "blue", href: "https://siera.veterantech.id" }],
+  },
+  {
     id: "1",
     title: "Inditech Company Profile",
     image: "/projects/inditech.webp",
@@ -56,6 +70,19 @@ export const PROJECTS: Project[] = [
     links: [
       { label: "Live Demo", variant: "blue", href: "https://geoportal-lautberkah.kalteng.go.id" },
     ],
+  },
+  {
+    id: "8",
+    title: "Papualoka",
+    image: "/projects/papualoka.png",
+    description:
+      "A dedicated website built to introduce and promote the rich cultural heritage of Papua to a wider audience.",
+    tags: [
+      { label: "React", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "UI/UX Design", color: "aqua" },
+    ],
+    links: [{ label: "View Website", variant: "blue", href: "https://papualoka.id" }],
   },
   {
     id: "3",
@@ -101,20 +128,34 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const DEV_SKILLS: Skill[] = [
-  { label: "HTML / CSS", level: "Advanced", fillColor: "green" },
-  { label: "JavaScript / TypeScript", level: "Advanced", fillColor: "blue" },
-  { label: "C#/C++", level: "Intermediate", fillColor: "purple" },
-  { label: "Python", level: "Intermediate", fillColor: "green" },
-  { label: "Golang", level: "Beginner", fillColor: "aqua" },
+export const EXPERIENCES = [
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "PT. GRAVIX",
+    sub: "Fullstack Developer | Aug 2024 - May 2025",
+  },
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "PT. Hexagon",
+    sub: "Backend Developer Intern | Sep 2024 - Nov 2024",
+  },
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "Indi Technology",
+    sub: "Fullstack Developer Intern | Mar 2024 - Nov 2024",
+  },
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "Freelance",
+    sub: "Software Developer | Present",
+  },
 ];
 
-export const FRAMEWORK_SKILLS: Skill[] = [
-  { label: "Laravel", level: "Advanced", fillColor: "aqua" },
-  { label: "NextJS", level: "Intermediate", fillColor: "blue" },
-  { label: "Svelte", level: "Intermediate", fillColor: "green" },
-  { label: "ThreeJS", level: "Intermediate", fillColor: "purple" },
-  { label: "Vue", level: "Intermediate", fillColor: "blue" },
+export const PERSONAL_SKILLS: Skill[] = [
+  { label: "Indonesian Language", level: "Native", fillColor: "green" },
+  { label: "English Language", level: "Intermediate", fillColor: "blue" },
+  { label: "Problem Solving", level: "Advanced", fillColor: "purple" },
+  { label: "Team Collaboration", level: "Advanced", fillColor: "aqua" },
 ];
 
 export const TOOLS: Tools[] = [
@@ -171,12 +212,15 @@ export const TABS = [
   },
 ];
 
-export const COMPETITION = [
+export const EDUCATION = [
   {
     icon: "/img/icons/home.webp",
-    title: 'UPN "Veteran" Jakarta',
-    sub: "Computer Science, 2025 - Present",
+    title: 'Universitas Pembangunan Nasional "Veteran" Jakarta',
+    sub: "Bachelor's Degree of Computer Science, Informatics | 2025 - Present",
   },
+];
+
+export const COMPETITION = [
   {
     icon: "/img/icons/gear.webp",
     title: "2nd Place | LKS Web Technologies, Regional DKI Jakarta",

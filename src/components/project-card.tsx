@@ -23,7 +23,7 @@ export function ProjectCard({ project, size = "md" }: ProjectCardProps) {
     >
       {/* Thumbnail */}
       <div
-        className={`relative overflow-hidden text-4xl ${size === "sm" ? "md:w-1/5" : "md:w-75"} w-full h-auto`}
+        className={`relative overflow-hidden text-4xl ${size === "sm" ? "md:w-1/5" : "md:w-48"} w-full h-auto`}
       >
         <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-white/50 to-transparent" />
         <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-sky-300/40 to-transparent" />
