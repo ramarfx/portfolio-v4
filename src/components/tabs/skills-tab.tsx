@@ -1,9 +1,4 @@
-import {
-  COMPETITION,
-  DEV_SKILLS,
-  FRAMEWORK_SKILLS,
-  TOOLS,
-} from "@/data/data";
+import { COMPETITION, EXPERIENCES, EDUCATION, PERSONAL_SKILLS, TOOLS } from "@/data/data";
 import { SectionBody } from "../windows/ui/section-body";
 import { SectionTitle } from "../windows/ui/section-title";
 import { SkillBar } from "../skillbar";
@@ -14,18 +9,29 @@ export function SkillsTab() {
   return (
     <div className="w-full">
       <div className="grid grid-cols-2 gap-2.5 mb-2.5">
-        <div>
-          <SectionTitle>Language Skills</SectionTitle>
-          <SectionBody>
-            {DEV_SKILLS.map((s) => (
-              <SkillBar key={s.label} skill={s} />
+        <div className="flex flex-col">
+          <SectionTitle>Work Experience</SectionTitle>
+          <SectionBody className="flex-1">
+            {EXPERIENCES.map(({ icon, title, sub }) => (
+              <div
+                key={title}
+                className="flex items-start gap-2.5 border-b border-blue-200/25 py-1.5 text-[11px] last:border-0"
+              >
+                <span className="shrink-0 mt-0.5">
+                  <Image src={icon} alt={title} width={16} height={16} className="object-contain" />
+                </span>
+                <div>
+                  <p className="font-bold text-blue-900">{title}</p>
+                  <p className="text-blue-600">{sub}</p>
+                </div>
+              </div>
             ))}
           </SectionBody>
         </div>
-        <div>
-          <SectionTitle>Laravel Skills</SectionTitle>
-          <SectionBody>
-            {FRAMEWORK_SKILLS.map((s) => (
+        <div className="flex flex-col">
+          <SectionTitle>Languages &amp; Soft Skills</SectionTitle>
+          <SectionBody className="flex-1 grid grid-cols-1 gap-0 mb-2.5">
+            {PERSONAL_SKILLS.map((s) => (
               <SkillBar key={s.label} skill={s} />
             ))}
           </SectionBody>
@@ -44,12 +50,35 @@ export function SkillsTab() {
         </div>
       </SectionBody>
 
-      <SectionTitle>Education &amp; Competitions</SectionTitle>
+      <SectionTitle>Education</SectionTitle>
+      <SectionBody>
+        {EDUCATION.map(({ icon, title, sub }) => (
+          <div
+            key={title}
+            className="flex items-start gap-2.5 border-b border-blue-200/25 py-1.5 text-[11px] last:border-0"
+          >
+            <span className="flex-shrink-0 mt-0.5">
+              {icon.startsWith("/") ? (
+                <Image src={icon} alt={title} width={16} height={16} className="object-contain" />
+              ) : (
+                <span className="text-lg">{icon}</span>
+              )}
+            </span>
+            <div>
+              <p className="font-bold text-blue-900">{title}</p>
+              <p className="text-blue-600">{sub}</p>
+            </div>
+          </div>
+        ))}
+      </SectionBody>
+
+      <SectionTitle>Competitions</SectionTitle>
       <SectionBody>
         {COMPETITION.map(({ icon, title, sub }) => (
           <div
             key={title}
-            className="flex items-start gap-2.5 border-b border-blue-200/25 py-1.5 text-[11px] last:border-0">
+            className="flex items-start gap-2.5 border-b border-blue-200/25 py-1.5 text-[11px] last:border-0"
+          >
             <span className="flex-shrink-0 mt-0.5">
               {icon.startsWith("/") ? (
                 <Image src={icon} alt={title} width={16} height={16} className="object-contain" />

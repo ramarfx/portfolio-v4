@@ -86,30 +86,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistMono.variable} h-full antialiased`}>
       <body
         className="relative w-full min-h-screen overflow-x-hidden"
         style={{
           fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
           fontSize: 13,
           color: "#1a3a1a",
-        }}>
+        }}
+      >
         <WindowProvider>
           <div className="fixed inset-0 -z-10">
-            <Image
-              src="/img/background-2.webp"
-              alt="bg"
-              fill
-              className="object-cover"
-            />
+            <Image src="/img/background-2.webp" alt="bg" fill className="object-cover" />
           </div>
           <StartupLoader />
 
-          <div className="pb-0">
-            {children}
-          </div>
+          <div className="pb-0">{children}</div>
 
           {/* CRT Overlays */}
           {/* <div className="crt" /> */}

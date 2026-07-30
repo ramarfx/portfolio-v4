@@ -13,7 +13,7 @@ export interface Project {
 
 export interface Skill {
   label: string;
-  level: "Beginner" | "Intermediate" | "Advanced"
+  level: "Beginner" | "Intermediate" | "Advanced" | "Native";
   fillColor: "blue" | "green" | "aqua" | "purple";
 }
 

@@ -14,14 +14,9 @@ export const DesktopShortcut = (params: Params) => {
   return (
     <button
       className="flex flex-col justify-center items-center gap-2 hover:cursor-pointer hover:bg-white/20 w-30 h-auto rounded py-2"
-      onClick={() => openWindow(params.id)}>
-      <Image
-        src={params.icon}
-        alt="desktop"
-        width={200}
-        height={200}
-        className="size-20"
-      />
+      onClick={() => openWindow(params.id)}
+    >
+      <Image src={params.icon} alt="desktop" width={200} height={200} className="size-20" />
       <p className="text-white text-center text-shadow-md/50">{params.text}</p>
     </button>
   );

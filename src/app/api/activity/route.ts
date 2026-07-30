@@ -1,25 +1,30 @@
 import { NextResponse } from "next/server";
 
-function formatEvent(event: any) {
-  const repo = event.repo.name;
-  const date = new Date(event.created_at).toLocaleString();
+type GitHubEvent = Record<string, unknown>;
+
+function formatEvent(event: GitHubEvent) {
+  const repo = (event.repo as Record<string, string>)?.name ?? "-";
+  const date = new Date(event.created_at as string).toLocaleString();
 
   switch (event.type) {
     case "PushEvent": {
-      const branch = event.payload.ref.replace("refs/heads/", "");
-      const commits = event.payload.commits || [];
+      const payload = event.payload as Record<string, unknown>;
+      const branch = (payload.ref as string).replace("refs/heads/", "");
+      const commits = (payload.commits as { message: string }[]) || [];
 
       const commitMessages = commits
         .slice(0, 2)
-        .map((c: any) => `- ${c.message}`)
+        .map((c) => `- ${c.message}`)
         .join("\n");
 
       return `[${date}] PUSH to ${repo} (${branch})
 ${commitMessages}`;
     }
 
-    case "CreateEvent":
-      return `[${date}] CREATE ${event.payload.ref_type} "${event.payload.ref}" at ${repo}`;
+    case "CreateEvent": {
+      const payload = event.payload as Record<string, unknown>;
+      return `[${date}] CREATE ${payload.ref_type} "${payload.ref}" at ${repo}`;
+    }
 
     default:
       return `[${date}] ${event.type} at ${repo}`;
@@ -40,21 +45,12 @@ export async function GET() {
       throw new Error("Failed to fetch activity");
     }
 
-    const data = await res.json();
+    const data = (await res.json()) as GitHubEvent[];
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const logs = data.map((event: any) => {
-      const date = new Date(event.created_at).toLocaleString();
-
-      return formatEvent(event);
-    });
-
+    const logs = data.map((event) => formatEvent(event));
 
     return NextResponse.json(logs);
-  } catch (error) {
-    return NextResponse.json(
-      { message: "Error fetching activity" },
-      { status: 500 },
-    );
+  } catch {
+    return NextResponse.json({ message: "Error fetching activity" }, { status: 500 });
   }
 }

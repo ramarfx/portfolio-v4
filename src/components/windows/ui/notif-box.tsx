@@ -10,8 +10,7 @@ export function NotifBox({
   const variants = {
     yellow:
       "bg-gradient-to-b from-yellow-50/85 to-yellow-100/75 border-yellow-400/50 text-yellow-900",
-    green:
-      "bg-gradient-to-b from-green-50/85 to-green-100/75 border-green-400/50 text-green-900",
+    green: "bg-gradient-to-b from-green-50/85 to-green-100/75 border-green-400/50 text-green-900",
     blue: "bg-gradient-to-b from-blue-50/85 to-blue-100/75 border-blue-400/50 text-blue-900",
   };
   return (

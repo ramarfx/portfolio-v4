@@ -15,8 +15,7 @@ export function RepoSidebar({ isCollapsed }: RepoSidebarProps) {
         "md:relative",
       ].join(" ")}
       style={{
-        background:
-          "linear-gradient(180deg, rgba(240,245,252,0.6) 0%, rgba(230,240,255,0.6) 100%)",
+        background: "linear-gradient(180deg, rgba(240,245,252,0.6) 0%, rgba(230,240,255,0.6) 100%)",
       }}
     >
       <SidebarSection title="Favorites" items={SIDEBAR_FAVORITES} />

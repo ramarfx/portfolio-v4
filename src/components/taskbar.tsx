@@ -11,24 +11,14 @@ const TASKBAR_WINDOWS = [
   { id: "activity", label: "Notepad", icon: "/img/icons/notepad.webp" },
 ];
 
-/* ── System-tray quick-launch icons ─────────────────────────────── */
-const TRAY_ICONS = [
-  { icon: "/img/icons/mail.webp", label: "Mail", href: "mailto:ramadina@example.com" },
-  { icon: "/img/icons/linkedin.svg", label: "LinkedIn", href: "https://linkedin.com/in/ramarfx" },
-  { icon: "/img/icons/gear.webp", label: "Settings" },
-];
-
 /* ── Digital clock ───────────────────────────────────────────────── */
 function Clock() {
-  const [time, setTime] = useState<Date | null>(null);
+  const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    setTime(new Date());
     const id = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
-
-  if (!time) return null;
 
   const hh = time.getHours().toString().padStart(2, "0");
   const mm = time.getMinutes().toString().padStart(2, "0");
@@ -94,21 +84,42 @@ export function Taskbar() {
               {TASKBAR_WINDOWS.map((win) => (
                 <button
                   key={win.id}
-                  onClick={() => { openWindow(win.id); setStartOpen(false); }}
+                  onClick={() => {
+                    openWindow(win.id);
+                    setStartOpen(false);
+                  }}
                   className="w-full flex items-center gap-3 px-4 py-2.5 text-gray-800 text-[13px] hover:bg-blue-500 hover:text-white transition-colors text-left group"
                 >
-                  <Image src={win.icon} alt={win.label} width={24} height={24} className="object-contain flex-shrink-0" />
+                  <Image
+                    src={win.icon}
+                    alt={win.label}
+                    width={24}
+                    height={24}
+                    className="object-contain flex-shrink-0"
+                  />
                   <span className="font-medium">{win.label}</span>
                 </button>
               ))}
               {/* Divider */}
               <div className="my-1 border-t border-gray-200 mx-2" />
               <button className="w-full flex items-center gap-3 px-4 py-2.5 text-gray-800 text-[13px] hover:bg-blue-500 hover:text-white transition-colors text-left">
-                <Image src="/img/icons/gear.webp" alt="Settings" width={24} height={24} className="object-contain flex-shrink-0" />
+                <Image
+                  src="/img/icons/gear.webp"
+                  alt="Settings"
+                  width={24}
+                  height={24}
+                  className="object-contain flex-shrink-0"
+                />
                 <span className="font-medium">Settings</span>
               </button>
               <button className="w-full flex items-center gap-3 px-4 py-2.5 text-gray-800 text-[13px] hover:bg-blue-500 hover:text-white transition-colors text-left">
-                <Image src="/img/icons/mail.webp" alt="Mail" width={24} height={24} className="object-contain flex-shrink-0" />
+                <Image
+                  src="/img/icons/mail.webp"
+                  alt="Mail"
+                  width={24}
+                  height={24}
+                  className="object-contain flex-shrink-0"
+                />
                 <span className="font-medium">Mail</span>
               </button>
             </div>
@@ -116,10 +127,23 @@ export function Taskbar() {
             {/* Search bar */}
             <div
               className="flex items-center gap-2 px-3 py-2"
-              style={{ background: "rgba(180,210,240,0.5)", borderTop: "1px solid rgba(100,150,200,0.3)" }}
+              style={{
+                background: "rgba(180,210,240,0.5)",
+                borderTop: "1px solid rgba(100,150,200,0.3)",
+              }}
             >
-              <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <svg
+                className="w-4 h-4 text-gray-400 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
               </svg>
               <input
                 type="text"
@@ -133,7 +157,8 @@ export function Taskbar() {
           <div
             className="flex flex-col flex-1"
             style={{
-              background: "linear-gradient(180deg, rgba(120,185,240,0.85) 0%, rgba(50,130,210,0.92) 100%)",
+              background:
+                "linear-gradient(180deg, rgba(120,185,240,0.85) 0%, rgba(50,130,210,0.92) 100%)",
               borderLeft: "1px solid rgba(255,255,255,0.35)",
             }}
           >
@@ -141,7 +166,8 @@ export function Taskbar() {
             <div
               className="flex flex-col items-center px-4 pt-4 pb-3"
               style={{
-                background: "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%)",
+                background:
+                  "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%)",
                 borderBottom: "1px solid rgba(255,255,255,0.3)",
               }}
             >
@@ -152,11 +178,21 @@ export function Taskbar() {
                   boxShadow: "0 0 0 2px rgba(255,255,255,0.8), 0 4px 12px rgba(0,0,0,0.2)",
                 }}
               >
-                <Image src="/img/user.webp" alt="user" width={64} height={64} className="object-cover w-full h-full" />
+                <Image
+                  src="/img/user.webp"
+                  alt="user"
+                  width={64}
+                  height={64}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div className="text-right">
-                <div className="text-white font-bold text-sm leading-tight drop-shadow-md">Ramadina</div>
-                <div className="text-white text-[10px] opacity-90 drop-shadow-sm font-medium">Full Stack Developer</div>
+                <div className="text-white font-bold text-sm leading-tight drop-shadow-md">
+                  Ramadina
+                </div>
+                <div className="text-white text-[10px] opacity-90 drop-shadow-sm font-medium">
+                  Full Stack Developer
+                </div>
               </div>
             </div>
 
@@ -165,9 +201,21 @@ export function Taskbar() {
               {[
                 { label: "Documents", icon: "/img/icons/file.webp" },
                 { label: "Pictures", icon: "/img/icons/Fax.webp" },
-                { label: "GitHub", icon: "/img/icons/folder.webp", href: "https://github.com/ramarfx" },
-                { label: "LinkedIn", icon: "/img/icons/linkedin.svg", href: "https://linkedin.com/in/ramarfx" },
-                { label: "Portfolio Site", icon: "/img/icons/edge.webp", href: "https://ramarfx.my.id" },
+                {
+                  label: "GitHub",
+                  icon: "/img/icons/folder.webp",
+                  href: "https://github.com/ramarfx",
+                },
+                {
+                  label: "LinkedIn",
+                  icon: "/img/icons/linkedin.svg",
+                  href: "https://linkedin.com/in/ramarfx",
+                },
+                {
+                  label: "Portfolio Site",
+                  icon: "/img/icons/edge.webp",
+                  href: "https://ramarfx.my.id",
+                },
               ].map((item) => (
                 <a
                   key={item.label}
@@ -176,7 +224,13 @@ export function Taskbar() {
                   rel="noreferrer"
                   className="flex items-center gap-3 px-4 py-2 text-blue-100 text-[12px] hover:bg-white/10 transition-colors"
                 >
-                  <Image src={item.icon} alt={item.label} width={16} height={16} className="object-contain flex-shrink-0 opacity-90" />
+                  <Image
+                    src={item.icon}
+                    alt={item.label}
+                    width={16}
+                    height={16}
+                    className="object-contain flex-shrink-0 opacity-90"
+                  />
                   <span>{item.label}</span>
                 </a>
               ))}
@@ -185,7 +239,10 @@ export function Taskbar() {
             {/* Shut down row */}
             <div
               className="flex items-center justify-between px-4 py-2.5"
-              style={{ borderTop: "1px solid rgba(255,255,255,0.1)", background: "rgba(0,0,0,0.2)" }}
+              style={{
+                borderTop: "1px solid rgba(255,255,255,0.1)",
+                background: "rgba(0,0,0,0.2)",
+              }}
             >
               <span className="text-white/50 text-[10px]">ramarfx.my.id</span>
               <button
@@ -194,7 +251,12 @@ export function Taskbar() {
               >
                 <span>Close</span>
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
@@ -218,24 +280,36 @@ export function Taskbar() {
         <div
           className="absolute inset-x-0 top-0 h-[2px] pointer-events-none"
           style={{
-            background: "linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.8) 30%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.8) 70%, rgba(255,255,255,0.2))",
+            background:
+              "linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.8) 30%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.8) 70%, rgba(255,255,255,0.2))",
           }}
         />
         {/* Glossy upper-half sheen */}
         <div
           className="absolute inset-x-0 top-0 h-[21px] pointer-events-none"
           style={{
-            background: "linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 100%)",
+            background:
+              "linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 100%)",
           }}
         />
 
         {/* ── Start Button ───────────────────────────────────────────── */}
         <button
-          onClick={(e) => { e.stopPropagation(); setStartOpen((v) => !v); }}
+          onClick={(e) => {
+            e.stopPropagation();
+            setStartOpen((v) => !v);
+          }}
           className="relative flex items-center gap-1.5 h-full pl-3 pr-5 flex-shrink-0 group"
         >
           {/* Windows orb */}
-          <Image src="/img/icons/vista-logo.webp" alt="Start" width={50} height={50} className="object-contain" priority />
+          <Image
+            src="/img/icons/vista-logo.webp"
+            alt="Start"
+            width={50}
+            height={50}
+            className="object-contain"
+            priority
+          />
         </button>
 
         {/* ── Pinned window buttons ──────────────────────────────────── */}
@@ -263,7 +337,13 @@ export function Taskbar() {
                   textShadow: "0 1px 2px rgba(0,0,0,0.4)",
                 }}
               >
-                <Image src={win.icon} alt={win.label} width={18} height={18} className="object-contain flex-shrink-0 drop-shadow" />
+                <Image
+                  src={win.icon}
+                  alt={win.label}
+                  width={18}
+                  height={18}
+                  className="object-contain flex-shrink-0 drop-shadow"
+                />
                 <span className="truncate">{win.label}</span>
                 {active && (
                   <div className="ml-auto w-1.5 h-1.5 rounded-full bg-white shadow-sm flex-shrink-0" />
@@ -274,10 +354,7 @@ export function Taskbar() {
         </div>
 
         {/* ── System Tray ────────────────────────────────────────────── */}
-        <div
-          className="flex items-center h-full pl-2 flex-shrink-0"
-        >
-
+        <div className="flex items-center h-full pl-2 flex-shrink-0">
           {/* Separator */}
           <div className="w-px h-5 bg-white/20 mx-1" />
 

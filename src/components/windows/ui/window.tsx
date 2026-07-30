@@ -14,13 +14,7 @@ interface AeroWindowProps {
   onOpen?: () => void;
 }
 
-export function AeroWindow({
-  id,
-  title,
-  icon,
-  children,
-  className,
-}: AeroWindowProps) {
+export function AeroWindow({ id, title, icon, children, className }: AeroWindowProps) {
   const { windows, closeWindow } = useWindow();
   const [position, setPosition] = useState({ x: 5, y: 5 });
   const [isMobile, setIsMobile] = useState(false);
@@ -69,7 +63,8 @@ export function AeroWindow({
               x: position.x + info.offset.x,
               y: position.y + info.offset.y,
             });
-          }}>
+          }}
+        >
           <motion.div
             // WINDOW ANIMATION
             initial={{ scale: 0, y: 0, opacity: 0 }}
@@ -79,31 +74,40 @@ export function AeroWindow({
               duration: 0.1,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className={cn(
-              "window glass active shadow-xl",
-              className,
-            )}>
+            className={cn("window glass active shadow-xl", className)}
+          >
             {/* Titlebar */}
             <div
               onPointerDown={onPointerDown}
-              className="title-bar cursor-move relative flex items-center">
+              className="title-bar cursor-move relative flex items-center"
+            >
               {icon && (
-                <Image src={icon} alt="Window Icon" width={16} height={16} className="mr-1 inline-block" />
+                <Image
+                  src={icon}
+                  alt="Window Icon"
+                  width={16}
+                  height={16}
+                  className="mr-1 inline-block"
+                />
               )}
-              <div className="title-bar-text">
-                {title}
-              </div>
+              <div className="title-bar-text">{title}</div>
 
               <div className="title-bar-controls">
-                <button aria-label="Minimize" className="hover:cursor-pointer" onClick={() => closeWindow(id)}></button>
+                <button
+                  aria-label="Minimize"
+                  className="hover:cursor-pointer"
+                  onClick={() => closeWindow(id)}
+                ></button>
                 <button aria-label="Maximize" className="hover:cursor-pointer"></button>
-                <button aria-label="Close" className="hover:cursor-pointer" onClick={() => closeWindow(id)}></button>
+                <button
+                  aria-label="Close"
+                  className="hover:cursor-pointer"
+                  onClick={() => closeWindow(id)}
+                ></button>
               </div>
             </div>
 
-            <div className="window-body">
-              {children}
-            </div>
+            <div className="window-body">{children}</div>
           </motion.div>
         </motion.section>
       )}

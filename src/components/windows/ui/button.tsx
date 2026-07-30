@@ -30,8 +30,7 @@ const BUTTON_VARIANTS: Record<ButtonVariant, string> = {
   ].join(" "),
 };
 
-interface GlossyButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface GlossyButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: "sm" | "md";
   as?: "button" | "a";

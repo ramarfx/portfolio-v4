@@ -21,13 +21,11 @@ export const WindowProvider = ({ children }: { children: React.ReactNode }) => {
   const [windows, setWindows] = useState<WindowState[]>([]);
 
   const openWindow = (id: string) => {
-    setWindows(prev => {
-      const exists = prev.find(w => w.id === id);
-        
+    setWindows((prev) => {
+      const exists = prev.find((w) => w.id === id);
+
       if (exists) {
-        return prev.map(w =>
-          w.id === id ? { ...w, isOpen: true, isMaximized: true } : w
-        );
+        return prev.map((w) => (w.id === id ? { ...w, isOpen: true, isMaximized: true } : w));
       }
 
       return [...prev, { id, isOpen: true, isMaximized: true }];
@@ -35,19 +33,13 @@ export const WindowProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const toggleMaximize = (id: string) => {
-    setWindows(prev =>
-      prev.map(w =>
-        w.id === id ? { ...w, isMaximized: !w.isMaximized } : w
-      )
+    setWindows((prev) =>
+      prev.map((w) => (w.id === id ? { ...w, isMaximized: !w.isMaximized } : w)),
     );
   };
 
   const closeWindow = (id: string) => {
-    setWindows(prev =>
-      prev.map(w =>
-        w.id === id ? { ...w, isOpen: false } : w
-      )
-    );
+    setWindows((prev) => prev.map((w) => (w.id === id ? { ...w, isOpen: false } : w)));
   };
 
   return (

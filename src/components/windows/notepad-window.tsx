@@ -18,21 +18,13 @@ export function ActivityWindow() {
   }, []);
 
   return (
-    <AeroWindow
-      id="activity"
-      title="My activity — Notepad"
-      icon="/img/icons/notepad.webp">
-
+    <AeroWindow id="activity" title="My activity — Notepad" icon="/img/icons/notepad.webp">
       {/* Menu Bar */}
       <MenuBar />
 
       {/* Content */}
       <div className="flex-1 bg-white p-2 overflow-scroll font-mono text-[12px] whitespace-pre-wrap max-h-[80dvh]">
-        {loading ? (
-          <span>Loading...</span>
-        ) : (
-          logs.map((log, i) => <div key={i}>{log}</div>)
-        )}
+        {loading ? <span>Loading...</span> : logs.map((log, i) => <div key={i}>{log}</div>)}
       </div>
 
       {/* Status Bar */}

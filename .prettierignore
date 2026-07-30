@@ -1,0 +1,13 @@
+.next
+.next/**
+node_modules
+node_modules/**
+*.lock
+*.svg
+*.webp
+*.png
+public
+public/**
+.next
+out
+build

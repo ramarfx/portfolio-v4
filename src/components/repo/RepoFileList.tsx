@@ -26,7 +26,8 @@ export function RepoFileList({
         <>
           {/* Column headers */}
           <SectionTitle
-            className={`${COL_GRID} gap-2 px-3 py-2 text-[11px] sticky top-0 from-white`}>
+            className={`${COL_GRID} gap-2 px-3 py-2 text-[11px] sticky top-0 from-white`}
+          >
             <span>Name</span>
             <span className="hidden md:block">Description</span>
             <span>Date Modified</span>
@@ -49,9 +50,9 @@ export function RepoFileList({
                 style={
                   isSelected
                     ? {
-                      background:
-                        "linear-gradient(90deg, rgba(185,215,252,0.6) 0%, rgba(155,195,245,0.4) 100%)",
-                    }
+                        background:
+                          "linear-gradient(90deg, rgba(185,215,252,0.6) 0%, rgba(155,195,245,0.4) 100%)",
+                      }
                     : undefined
                 }
                 onClick={() => onSelect(repo)}
@@ -93,9 +94,7 @@ export function RepoFileList({
                   "flex flex-col items-center justify-start p-2",
                   "cursor-pointer text-[11px] text-blue-900",
                   "border border-transparent",
-                  isSelected
-                    ? "border-blue-700 bg-blue-200/40"
-                    : "hover:bg-blue-100/30",
+                  isSelected ? "border-blue-700 bg-blue-200/40" : "hover:bg-blue-100/30",
                 ].join(" ")}
               >
                 <Image
@@ -106,9 +105,7 @@ export function RepoFileList({
                   className="w-10 h-auto mb-1"
                 />
 
-                <span className="text-center break-words leading-tight">
-                  {repo.name}
-                </span>
+                <span className="text-center break-words leading-tight">{repo.name}</span>
               </div>
             );
           })}

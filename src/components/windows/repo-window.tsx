@@ -3,13 +3,7 @@ import { AeroWindow } from "./ui/window";
 
 import { useEffect, useState } from "react";
 import { Repo } from "@/data/repos";
-import {
-  RepoFileList,
-  RepoMenuBar,
-  RepoSidebar,
-  RepoStatusBar,
-  RepoToolbar,
-} from "../repo";
+import { RepoFileList, RepoSidebar, RepoStatusBar, RepoToolbar } from "../repo";
 import { MenuBar } from "./ui/menu-bar";
 
 export const RepoWindow = () => {
@@ -29,10 +23,7 @@ export const RepoWindow = () => {
   };
 
   return (
-    <AeroWindow
-      id="repository"
-      title="File Explorer"
-      icon="/img/icons/file-explorer.webp">
+    <AeroWindow id="repository" title="File Explorer" icon="/img/icons/file-explorer.webp">
       <MenuBar />
       <RepoToolbar
         isSidebarCollapsed={isSidebarCollapsed}
@@ -54,10 +45,7 @@ export const RepoWindow = () => {
         />
       </div>
 
-      <RepoStatusBar
-        totalCount={repos?.length ?? 0}
-        selectedRepo={selectedRepo}
-      />
+      <RepoStatusBar totalCount={repos?.length ?? 0} selectedRepo={selectedRepo} />
     </AeroWindow>
   );
 };

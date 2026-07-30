@@ -3,7 +3,7 @@ import { cn } from "@/libs/utils";
 export function Tag({
   children,
   color = "blue",
-  className
+  className,
 }: {
   children: React.ReactNode;
   color?: "blue" | "green" | "aqua" | "yellow";
@@ -19,7 +19,8 @@ export function Tag({
     <span
       className={cn(
         "rounded-full border px-2.5 py-0.5 text-[10px] font-medium bg-linear-180 from-transparent",
-        colors[color], className
+        colors[color],
+        className,
       )}
     >
       {children}

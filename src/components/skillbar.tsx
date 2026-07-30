@@ -14,6 +14,7 @@ const LEVEL_WIDTH = {
   Beginner: 33,
   Intermediate: 66,
   Advanced: 100,
+  Native: 100,
 };
 
 interface SkillBarProps {
@@ -35,7 +36,7 @@ export function SkillBar({ skill, animate = true }: SkillBarProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -53,8 +54,7 @@ export function SkillBar({ skill, animate = true }: SkillBarProps) {
       <div
         className="relative h-3.5 overflow-hidden rounded-full border border-blue-300/35"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(0,0,0,0.08), rgba(255,255,255,0.3))",
+          background: "linear-gradient(180deg, rgba(0,0,0,0.08), rgba(255,255,255,0.3))",
           boxShadow: "inset 0 1px 2px rgba(0,0,80,0.15)",
         }}
       >
