@@ -34,36 +34,44 @@ export function BrowserChrome({ activeTab, onTabChange, setIsOpen }: BrowserChro
     <>
       {/* IE Toolbar */}
       <div
-        className="flex items-center gap-1 border-b border-blue-300/40 px-2.5 py-1"
+        className="flex items-center gap-1 border-b border-blue-300/40 px-2 py-1 overflow-x-hidden"
         style={{
           background: "linear-gradient(180deg, #f0f8ff 0%, #dceeff 40%, #c8e4ff 100%)",
         }}
       >
-        {toolbarButtons.map((btn, i) =>
-          btn === null ? (
-            <div key={i} className="mx-0.5 h-4.5 w-px bg-blue-300/40" />
-          ) : (
+        <div className="flex items-center gap-0.5 shrink-0">
+          {toolbarButtons.map((btn, i) => (
             <button
               key={i}
-              className="cursor-pointer rounded border border-transparent px-1 py-0.5 text-[11px] font-bold text-blue-800 transition-all duration-100 hover:border-blue-300 hover:bg-linear-to-b hover:from-white/90 hover:to-blue-100/70 hover:shadow-[0_1px_3px_rgba(0,80,160,0.15)]"
+              className="cursor-pointer rounded border border-transparent p-1 text-[11px] font-bold text-blue-800 transition-all duration-100 hover:border-blue-300 hover:bg-linear-to-b hover:from-white/90 hover:to-blue-100/70 hover:shadow-[0_1px_3px_rgba(0,80,160,0.15)] shrink-0"
+              title={btn.label}
             >
               {btn.icon}
               <span className="sr-only">{btn.label}</span>
             </button>
-          ),
-        )}
+          ))}
+        </div>
 
         {/* Address bar */}
         <input
           readOnly
           value={`https://www.ramarfx.my.id/${activeFile}`}
-          className="mx-1 flex-1 rounded-[3px] border border-blue-300/60 bg-linear-to-b from-white to-blue-50 px-2 py-0.5 font-[Trebuchet_MS,sans-serif] text-[11px] text-blue-900 shadow-[inset_0_1px_2px_rgba(0,0,50,0.1)]"
+          className="mx-0.5 flex-1 min-w-0 truncate rounded-[3px] border border-blue-300/60 bg-linear-to-b from-white to-blue-50 px-2 py-0.5 font-[Trebuchet_MS,sans-serif] text-[11px] text-blue-900 shadow-[inset_0_1px_2px_rgba(0,0,50,0.1)]"
         />
-        <GlossyButton variant="green" className="hidden md:block px-2 py-0.5">
+
+        <GlossyButton variant="green" className="hidden md:inline-flex px-2 py-0.5 shrink-0">
           Submit
         </GlossyButton>
-        <div className="md:hidden py-0.5">
-          <GlossyButton onClick={() => setIsOpen(true)} className="">
+
+        {/* Hamburger Menu button (Mobile) */}
+        <div className="md:hidden shrink-0">
+          <GlossyButton
+            onClick={() => setIsOpen(true)}
+            variant="blue"
+            size="sm"
+            className="px-2 py-1"
+            aria-label="Toggle navigation menu"
+          >
             <Menu size={16} />
           </GlossyButton>
         </div>
@@ -71,7 +79,7 @@ export function BrowserChrome({ activeTab, onTabChange, setIsOpen }: BrowserChro
 
       {/* Tab bar */}
       <div
-        className="flex items-end gap-0.5 border-b border-blue-300/40 px-2.5 pt-1.5"
+        className="flex items-end gap-0.5 border-b border-blue-300/40 px-2 pt-1.5 overflow-x-auto max-w-full no-scrollbar"
         style={{
           background: "linear-gradient(180deg, rgba(200,225,255,0.5), rgba(170,205,250,0.3))",
         }}
@@ -83,8 +91,8 @@ export function BrowserChrome({ activeTab, onTabChange, setIsOpen }: BrowserChro
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
               className={[
-                "relative top-px cursor-pointer rounded-t-[5px] border border-b-0 px-3.5 py-1.25",
-                "mr-0.5 text-[11px] font-bold transition-all duration-100",
+                "relative top-px cursor-pointer rounded-t-[5px] border border-b-0 px-3 py-1.25 shrink-0",
+                "mr-0.5 text-[11px] font-bold transition-all duration-100 whitespace-nowrap",
                 isActive
                   ? "z-10 border-blue-400/45 bg-linear-to-b from-white/85 to-blue-50/70 text-blue-900"
                   : "border-blue-200/35 bg-linear-to-b from-white/50 to-blue-100/30 text-blue-700 hover:bg-linear-to-b hover:from-white/65 hover:to-blue-100/40",
@@ -93,9 +101,9 @@ export function BrowserChrome({ activeTab, onTabChange, setIsOpen }: BrowserChro
               <Image
                 src={tab.icon}
                 alt={`${tab.label} icon`}
-                width={16}
-                height={16}
-                className="inline-block mr-1.5"
+                width={14}
+                height={14}
+                className="inline-block mr-1.5 shrink-0"
               />
               {tab.label}
             </button>

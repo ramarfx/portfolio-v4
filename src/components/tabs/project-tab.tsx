@@ -7,7 +7,7 @@ export function ProjectsTab() {
   return (
     <div>
       <SectionTitle>My Projects</SectionTitle>
-      <SectionBody className="grid grid-cols-2 gap-2.5">
+      <SectionBody className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
         {PROJECTS.map((p) => (
           <ProjectCard key={p.id} project={p} image={p.image} />
         ))}
