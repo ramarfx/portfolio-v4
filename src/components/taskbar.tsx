@@ -66,9 +66,8 @@ export function Taskbar() {
       {/* ── Start Menu ──────────────────────────────────────────────── */}
       {startOpen && (
         <div
-          className="fixed bottom-[42px] left-0 z-50 flex rounded-tr-2xl overflow-hidden"
+          className="fixed bottom-[42px] left-0 z-50 flex rounded-tr-2xl overflow-hidden max-w-[calc(100vw-12px)] w-[480px]"
           style={{
-            width: "480px",
             boxShadow: "4px -4px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.2)",
             backdropFilter: "blur(20px)",
           }}
@@ -76,7 +75,7 @@ export function Taskbar() {
         >
           {/* LEFT panel — white, app list */}
           <div
-            className="flex flex-col w-[260px] flex-shrink-0"
+            className="flex flex-col w-[220px] sm:w-[260px] shrink-0"
             style={{ background: "rgba(240,248,255,0.96)" }}
           >
             {/* Search bar at bottom */}

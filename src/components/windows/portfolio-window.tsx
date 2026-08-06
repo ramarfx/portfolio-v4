@@ -35,7 +35,7 @@ export const PortfolioWindow = () => {
         <BrowserChrome activeTab={activeTab} onTabChange={setActiveTab} setIsOpen={setIsOpen} />
 
         {/* Body */}
-        <div className="flex min-h-[80svh] h-full">
+        <div className="flex min-h-[80svh] h-full relative overflow-hidden">
           {/* Sidebar */}
           <Sidebar
             activeTab={activeTab}
@@ -45,7 +45,9 @@ export const PortfolioWindow = () => {
           />
 
           {/* Content */}
-          <div className="bg-white/62 p-4 backdrop-blur-sm flex-1">{renderTab()}</div>
+          <div className="bg-white/62 p-3 sm:p-4 backdrop-blur-sm flex-1 min-w-0 overflow-x-hidden">
+            {renderTab()}
+          </div>
         </div>
 
         <StatusBar />
