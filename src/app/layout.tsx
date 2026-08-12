@@ -19,11 +19,11 @@ const BASE_URL = "https://ramarfx.my.id";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Ramadina Al Muzthazam — Portfolio",
+    default: "Ramadina Al Muzthazam - Portfolio",
     template: "%s | Ramadina",
   },
   description:
-    "Portfolio of Ramadina Al Muzthazam — Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2× Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
+    "Portfolio of Ramadina Al Muzthazam - Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2x Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
   keywords: [
     "Ramadina",
     "Ramadina Al Muzthazam",
@@ -56,25 +56,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: BASE_URL,
-    title: "Ramadina Al Muzthazam — Portfolio",
+    title: "Ramadina Al Muzthazam - Portfolio",
     description:
-      "Portfolio of Ramadina Al Muzthazam — Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2× Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
+      "Portfolio of Ramadina Al Muzthazam - Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2x Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
     siteName: "Ramadina Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Ramadina Al Muzthazam — Portfolio",
+        alt: "Ramadina Al Muzthazam - Portfolio",
       },
     ],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ramadina Al Muzthazam — Portfolio",
+    title: "Ramadina Al Muzthazam - Portfolio",
     description:
-      "Portfolio of Ramadina Al Muzthazam — Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2× Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
+      "Portfolio of Ramadina Al Muzthazam - Full Stack Developer from Jakarta. 3D web experiences, government geospatial platforms, 2x Regional LKS Champion. Built with a Windows Vista Aero aesthetic.",
     images: ["/og-image.png"],
     creator: "@ramarfx",
   },
