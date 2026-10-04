@@ -1,1 +1,256 @@
-aW1wb3J0IHR5cGUgeyBQcm9qZWN0LCBTa2lsbCwgTmF2SXRlbSwgU3RhdEl0ZW0sIFRvb2xzIH0gZnJvbSAiQC90eXBlcy90eXBlcyI7CmltcG9ydCB7CiAgU2lCdW4sCiAgU2lEb2NrZXIsCiAgU2lHaXQsCiAgU2lMYXJhdmVsLAogIFNpTGluZWFyLAogIFNpTmV4dGRvdGpzLAogIFNpUG9zdGdyZXNxbCwKICBTaVJlYWN0LAogIFNpU3ZlbHRlLAogIFNpVGFpbHdpbmRjc3MsCiAgU2lUaHJlZWRvdGpzLAogIFNpVnVlZG90anMsCn0gZnJvbSAiQGljb25zLXBhY2svcmVhY3Qtc2ltcGxlLWljb25zIjsKCmV4cG9ydCBjb25zdCBQUk9KRUNUUzogUHJvamVjdFtdID0gWwogIHsKICAgIGlkOiAiOSIsCiAgICB0aXRsZTogIkJFTSBVUE5WSiBDb21wYW55IFByb2ZpbGUiLAogICAgaW1hZ2U6ICIvcHJvamVjdHMvYmVtdXBudmoud2VicCIsCiAgICBkZXNjcmlwdGlvbjoKICAgICAgIk9mZmljaWFsIGNvbXBhbnkgcHJvZmlsZSB3ZWJzaXRlIG9mIEJFTSBVUE5WSiwgdGhlIHN0dWRlbnQgZXhlY3V0aXZlIGJvYXJkIG9mIFVQTiBcIlZldGVyYW5cIiBKYWthcnRhLCBzZXJ2aW5nIGFzIGl0cyBwdWJsaWMgaHViIGZvciBvcmdhbml6YXRpb25hbCBwcm9maWxlLCBwcm9ncmFtcywgZG9jdW1lbnRzLCBwcmVzcyByZWxlYXNlcywgYW5kIHZvbHVudGVlciBvcHBvcnR1bml0aWVzLiIsCiAgICB0YWdzOiBbCiAgICAgIHsgbGFiZWw6ICJBc3RybyIsIGNvbG9yOiAiZ3JlZW4iIH0sCiAgICAgIHsgbGFiZWw6ICJVSS9VWCBEZXNpZ24iLCBjb2xvcjogImFxdWEiIH0sCiAgICBdLAogICAgbGlua3M6IFt7IGxhYmVsOiAiTGl2ZSBEZW1vIiwgdmFyaWFudDogImJsdWUiLCBocmVmOiAiaHR0cHM6Ly9iZW11cG52ai5pZCIgfV0sCiAgfSwKICB7CiAgICBpZDogIjciLAogICAgdGl0bGU6ICJTSUVSQSIsCiAgICBpbWFnZTogIi9wcm9qZWN0cy9zaWVyYS5wbmciLAogICAgZGVzY3JpcHRpb246CiAgICAgICJBIGNvbXByZWhlbnNpdmUgcGxhdGZvcm0gYnVpbHQgZm9yIFBBVFJJQkVSQSB0aGF0IGNlbnRyYWxpemVzIGluZm9ybWF0aW9uIG1hbmFnZW1lbnQsIHNpbXBsaWZpZXMgcGFydGljaXBhbnQgdHJhY2tpbmcsIGFuZCBvcHRpbWl6ZXMgdXNlciByZWdpc3RyYXRpb24gYW5kIGNlcnRpZmljYXRpb24gd29ya2Zsb3dzLiIsCiAgICB0YWdzOiBbCiAgICAgIHsgbGFiZWw6ICJSZWFjdCBWaXRlKyIsIGNvbG9yOiAiYmx1ZSIgfSwKICAgICAgeyBsYWJlbDogIlRhaWx3aW5kY3NzIiwgY29sb3I6ICJibHVlIiB9LAogICAgICB7IGxhYmVsOiAiVHlwZVNjcmlwdCIsIGNvbG9yOiAiYmx1ZSIgfSwKICAgICAgeyBsYWJlbDogIkhvbm8iLCBjb2xvcjogImJsdWUiIH0sCiAgICBdLAogICAgbGlua3M6IFt7IGxhYmVsOiAiVmlldyBQbGF0Zm9ybSIsIHZhcmlhbnQ6ICJibHVlIiwgaHJlZjogImh0dHBzOi8vc2llcmEudmV0ZXJhbnRlY2guaWQiIH1dLAogIH0sCiAgewogICAgaWQ6ICIxIiwKICAgIHRpdGxlOiAiSW5kaXRlY2ggQ29tcGFueSBQcm9maWxlIiwKICAgIGltYWdlOiAiL3Byb2plY3RzL2luZGl0ZWNoLndlYnAiLAogICAgZGVzY3JpcHRpb246CiAgICAgICJBIHVuaXF1ZSBhbmQgaW50ZXJhY3RpdmUgM0QtYmFzZWQgY29tcGFueSBwcm9maWxlIHdlYnNpdGUgZm9yIFBULiBJbmRpIFRlY2hub2xvZ3ksIGludGVncmF0ZWQgd2l0aCBhIGRheSBhbmQgbmlnaHQgY3ljbGUgc3lzdGVtLiIsCiAgICB0YWdzOiBbCiAgICAgIHsgbGFiZWw6ICJSZWFjdCIsIGNvbG9yOiAiZ3JlZW4iIH0sCiAgICAgIHsgbGFiZWw6ICJUYWlsd2luZGNzcyIsIGNvbG9yOiAiYmx1ZSIgfSwKICAgICAgeyBsYWJlbDogIlRocmVlSlMiLCBjb2xvcjogImdyZWVuIiB9LAogICAgICB7IGxhYmVsOiAiVUkvVVggRGVzaWduIiwgY29sb3I6ICJhcXVhIiB9LAogICAgXSwKICAgIGxpbmtzOiBbeyBsYWJlbDogIkxpdmUgRGVtbyIsIHZhcmlhbnQ6ICJibHVlIiwgaHJlZjogImh0dHBzOi8vd2ViLmluZGkudGVjaCIgfV0sCiAgfSwKICB7CiAgICBpZDogIjQiLAogICAgdGl0bGU6ICJMb21iYWthbiIsCiAgICBpbWFnZTogIi9wcm9qZWN0cy9sb21iYWthbi53ZWJwIiwKICAgIGRlc2NyaXB0aW9uOgogICAgICAiTG9tYmFrYW4gaXMgYSBtZW50b3JpbmcgcHJvZ3JhbSBmcm9tIEtTTSBWZXRlcmFuVGVjaCBVUE4gVmV0ZXJhbiBKYWthcnRhIHRvIGhlbHAgc3R1ZGVudHMgcHJlcGFyZSBmb3IgR0VNQVNUSUssIHRlY2hub2xvZ3kgY29tcGV0aXRpb25zLCBhbmQgYnVzaW5lc3MgY29tcGV0aXRpb25zIHdpdGggZXhwZXJpZW5jZWQgbWVudG9ycy4iLAogICAgdGFnczogWwogICAgICB7IGxhYmVsOiAiTmV4dC5qcyIsIGNvbG9yOiAiZ3JlZW4iIH0sCiAgICAgIHsgbGFiZWw6ICJUYWlsd2luZGNzcyIsIGNvbG9yOiAiYmx1ZSIgfSwKICAgIF0sCiAgICBsaW5rczogW3sgbGFiZWw6ICJMaXZlIERlbW8iLCB2YXJpYW50OiAiYmx1ZSIsIGhyZWY6ICJodHRwczovL2xvbWJha2FuLmlkIiB9XSwKICB9LAogIHsKICAgIGlkOiAiMiIsCiAgICB0aXRsZTogIkdlb3BvcnRhbCBMYXV0IEJlcmthaCIsCiAgICBpbWFnZTogIi9wcm9qZWN0cy9nZW9wb3J0YWwud2VicCIsCiAgICBkZXNjcmlwdGlvbjoKICAgICAgIlBsYXRmb3JtIHJlbGF0ZWQgdG8gcGVybWl0cyBmb3IgbWFyaW5lIHNwYWNlIHV0aWxpemF0aW9uIGxldHRlcnMgZm9yIHRoZSBwcm92aW5jZSBvZiBDZW50cmFsIEthbGltYW50YW4gYmFzZWQgb24gM0QuIiwKICAgIHRhZ3M6IFsKICAgICAgeyBsYWJlbDogIlJlYWN0IiwgY29sb3I6ICJncmVlbiIgfSwKICAgICAgeyBsYWJlbDogIlRhaWx3aW5kY3NzIiwgY29sb3I6ICJibHVlIiB9LAogICAgICB7IGxhYmVsOiAiVGhyZWVKUyIsIGNvbG9yOiAiZ3JlZW4iIH0sCiAgICAgIHsgbGFiZWw6ICJVSS9VWCBEZXNpZ24iLCBjb2xvcjogImFxdWEiIH0sCiAgICBdLAogICAgbGlua3M6IFsKICAgICAgeyBsYWJlbDogIkxpdmUgRGVtbyIsIHZhcmlhbnQ6ICJibHVlIiwgaHJlZjogImh0dHBzOi8vZ2VvcG9ydGFsLWxhdXRiZXJrYWgua2FsdGVuZy5nby5pZCIgfSwKICAgIF0sCiAgfSwKICB7CiAgICBpZDogIjgiLAogICAgdGl0bGU6ICJQYXB1YWxva2EiLAogICAgaW1hZ2U6ICIvcHJvamVjdHMvcGFwdWFsb2thLnBuZyIsCiAgICBkZXNjcmlwdGlvbjoKICAgICAgIkEgZGVkaWNhdGVkIHdlYnNpdGUgYnVpbHQgdG8gaW50cm9kdWNlIGFuZCBwcm9tb3RlIHRoZSByaWNoIGN1bHR1cmFsIGhlcml0YWdlIG9mIFBhcHVhIHRvIGEgd2lkZXIgYXVkaWVuY2UuIiwKICAgIHRhZ3M6IFsKICAgICAgeyBsYWJlbDogIlJlYWN0IiwgY29sb3I6ICJncmVlbiIgfSwKICAgICAgeyBsYWJlbDogIlRhaWx3aW5kY3NzIiwgY29sb3I6ICJibHVlIiB9LAogICAgICB7IGxhYmVsOiAiVUkvVVggRGVzaWduIiwgY29sb3I6ICJhcXVhIiB9LAogICAgXSwKICAgIGxpbmtzOiBbeyBsYWJlbDogIlZpZXcgV2Vic2l0ZSIsIHZhcmlhbnQ6ICJibHVlIiwgaHJlZjogImh0dHBzOi8vcGFwdWFsb2thLmlkIiB9XSwKICB9LAogIHsKICAgIGlkOiAiMyIsCiAgICB0aXRsZTogIlBlc3RhIFdhcm5hIE5hZGEiLAogICAgaW1hZ2U6ICIvcHJvamVjdHMvcHduLndlYnAiLAogICAgZGVzY3JpcHRpb246CiAgICAgICJMYW5kaW5nIHBhZ2UgZm9yIGEgbXVzaWMgZmVzdGl2YWwgZXZlbnQgY2FsbGVkIFBlc3RhIFdhcm5hIE5hZGEsIHdoaWNoIGlzIGhlbGQgYW5udWFsbHkgaW4gSmFrYXJ0YS4iLAogICAgdGFnczogWwogICAgICB7IGxhYmVsOiAiUmVhY3QiLCBjb2xvcjogImdyZWVuIiB9LAogICAgICB7IGxhYmVsOiAiVGFpbHdpbmRjc3MiLCBjb2xvcjogImJsdWUiIH0sCiAgICAgIHsgbGFiZWw6ICJUaHJlZUpTIiwgY29sb3I6ICJncmVlbiIgfSwKICAgICAgeyBsYWJlbDogIlVJL1VYIERlc2lnbiIsIGNvbG9yOiAiYXF1YSIgfSwKICAgIF0sCiAgICBsaW5rczogW3sgbGFiZWw6ICJMaXZlIERlbW8iLCB2YXJpYW50OiAiYmx1ZSIsIGhyZWY6ICJodHRwczovL3Blc3Rhd2FybmFuYWRhLmNvbSIgfV0sCiAgfSwKICB7CiAgICBpZDogIjUiLAogICAgdGl0bGU6ICJSZWJlbGx1bSIsCiAgICBpbWFnZTogIi9wcm9qZWN0cy9yZWJlbGx1bS53ZWJwIiwKICAgIGRlc2NyaXB0aW9uOgogICAgICAiUmViZWxsdW0gaXMgYSBwbGF0Zm9ybSB0aGF0IHByb3ZpZGVzIGluZm9ybWF0aW9uIGFuZCBzb2x1dGlvbnMgcmVsYXRlZCB0byBqdXZlbmlsZSBkZWxpbnF1ZW5jeSBpbiBJbmRvbmVzaWEuIiwKICAgIHRhZ3M6IFsKICAgICAgeyBsYWJlbDogIlJlYWN0IiwgY29sb3I6ICJncmVlbiIgfSwKICAgICAgeyBsYWJlbDogIlRhaWx3aW5kY3NzIiwgY29sb3I6ICJibHVlIiB9LAogICAgICB7IGxhYmVsOiAiVGhyZWVKUyIsIGNvbG9yOiAiZ3JlZW4iIH0sCiAgICAgIHsgbGFiZWw6ICJVSS9VWCBEZXNpZ24iLCBjb2xvcjogImFxdWEiIH0sCiAgICBdLAogICAgbGlua3M6IFt7IGxhYmVsOiAiTGl2ZSBEZW1vIiwgdmFyaWFudDogImJsdWUiLCBocmVmOiAiaHR0cHM6Ly9yZWJlbGx1bS52ZXJjZWwuYXBwIiB9XSwKICB9LAogIHsKICAgIGlkOiAiNiIsCiAgICB0aXRsZTogIkhlYWx0aHlTZWxmIiwKICAgIGltYWdlOiAiL3Byb2plY3RzL2hlYWx0aHlzZWxmLndlYnAiLAogICAgZGVzY3JpcHRpb246CiAgICAgICJQbGF0Zm9ybSB0aGF0IHByb3ZpZGVzIGluZm9ybWF0aW9uIHJlbGF0ZWQgdG8gbWFpbnRhaW5pbmcgYSBoZWFsdGh5IGxpZmVzdHlsZSBmb3IgdmFyaW91cyBncm91cHMsIGZyb20gYmFiaWVzIHRvIHRoZSBlbGRlcmx5LiIsCiAgICB0YWdzOiBbCiAgICAgIHsgbGFiZWw6ICJSZWFjdCIsIGNvbG9yOiAiZ3JlZW4iIH0sCiAgICAgIHsgbGFiZWw6ICJUYWlsd2luZGNzcyIsIGNvbG9yOiAiYmx1ZSIgfSwKICAgICAgeyBsYWJlbDogIlRocmVlSlMiLCBjb2xvcjogImdyZWVuIiB9LAogICAgICB7IGxhYmVsOiAiVUkvVVggRGVzaWduIiwgY29sb3I6ICJhcXVhIiB9LAogICAgXSwKICAgIGxpbmtzOiBbeyBsYWJlbDogIkxpdmUgRGVtbyIsIHZhcmlhbnQ6ICJibHVlIiwgaHJlZjogImh0dHBzOi8vaGVhbHRoeXNlbGYudmVyY2VsLmFwcCIgfV0sCiAgfSwKXTsKCmV4cG9ydCBjb25zdCBFWFBFUklFTkNFUyA9IFsKICB7CiAgICBpY29uOiAiL2ltZy9pY29ucy9zeXN0ZW0taW5mb3JtYXRpb24ud2VicCIsCiAgICB0aXRsZTogIlBULiBHUkFWSVgiLAogICAgc3ViOiAiRnVsbHN0YWNrIERldmVsb3BlciB8IEF1ZyAyMDI0IC0gTWF5IDIwMjUiLAogIH0sCiAgewogICAgaWNvbjogIi9pbWcvaWNvbnMvc3lzdGVtLWluZm9ybWF0aW9uLndlYnAiLAogICAgdGl0bGU6ICJQVC4gSGV4YWdvbiIsCiAgICBzdWI6ICJCYWNrZW5kIERldmVsb3BlciBJbnRlcm4gfCBTZXAgMjAyNCAtIE5vdiAyMDI0IiwKICB9LAogIHsKICAgIGljb246ICIvaW1nL2ljb25zL3N5c3RlbS1pbmZvcm1hdGlvbi53ZWJwIiwKICAgIHRpdGxlOiAiSW5kaSBUZWNobm9sb2d5IiwKICAgIHN1YjogIkZ1bGxzdGFjayBEZXZlbG9wZXIgSW50ZXJuIHwgTWFyIDIwMjQgLSBOb3YgMjAyNCIsCiAgfSwKICB7CiAgICBpY29uOiAiL2ltZy9pY29ucy9zeXN0ZW0taW5mb3JtYXRpb24ud2VicCIsCiAgICB0aXRsZTogIkZyZWVsYW5jZSIsCiAgICBzdWI6ICJTb2Z0d2FyZSBEZXZlbG9wZXIgfCBQcmVzZW50IiwKICB9LApdOwoKZXhwb3J0IGNvbnN0IFBFUlNPTkFMX1NLSUxMUzogU2tpbGxbXSA9IFsKICB7IGxhYmVsOiAiSW5kb25lc2lhbiBMYW5ndWFnZSIsIGxldmVsOiAiTmF0aXZlIiwgZmlsbENvbG9yOiAiZ3JlZW4iIH0sCiAgeyBsYWJlbDogIkVuZ2xpc2ggTGFuZ3VhZ2UiLCBsZXZlbDogIkludGVybWVkaWF0ZSIsIGZpbGxDb2xvcjogImJsdWUiIH0sCiAgeyBsYWJlbDogIlByb2JsZW0gU29sdmluZyIsIGxldmVsOiAiQWR2YW5jZWQiLCBmaWxsQ29sb3I6ICJwdXJwbGUiIH0sCiAgeyBsYWJlbDogIlRlYW0gQ29sbGFib3JhdGlvbiIsIGxldmVsOiAiQWR2YW5jZWQiLCBmaWxsQ29sb3I6ICJhcXVhIiB9LApdOwoKZXhwb3J0IGNvbnN0IFRPT0xTOiBUb29sc1tdID0gWwogIHsgaWNvbjogPFNpTGFyYXZlbCBzaXplPXsxNn0gLz4sIG5hbWU6ICJMYXJhdmVsIiB9LAogIHsgaWNvbjogPFNpUmVhY3Qgc2l6ZT17MTZ9IC8+LCBuYW1lOiAiUmVhY3QiIH0sCiAgeyBpY29uOiA8U2lOZXh0ZG90anMgc2l6ZT17MTZ9IC8+LCBuYW1lOiAiTmV4dC5qcyIgfSwKICB7IGljb246IDxTaVN2ZWx0ZSBzaXplPXsxNn0gLz4sIG5hbWU6ICJTdmVsdGUiIH0sCiAgeyBpY29uOiA8U2lUaHJlZWRvdGpzIHNpemU9ezE2fSAvPiwgbmFtZTogIlRocmVlLmpzIiB9LAogIHsgaWNvbjogPFNpQnVuIHNpemU9ezE2fSAvPiwgbmFtZTogIkJ1biIgfSwKICB7IGljb246IDxTaVZ1ZWRvdGpzIHNpemU9ezE2fSAvPiwgbmFtZTogIlZ1ZS5qcyIgfSwKICB7IGljb246IDxTaURvY2tlciBzaXplPXsxNn0gLz4sIG5hbWU6ICJEb2NrZXIiIH0sCiAgeyBpY29uOiA8U2lMaW5lYXIgc2l6ZT17MTZ9IC8+LCBuYW1lOiAiTGluZWFyIiB9LAogIHsgaWNvbjogPFNpVGFpbHdpbmRjc3Mgc2l6ZT17MTZ9IC8+LCBuYW1lOiAiVGFpbHdpbmRDU1MiIH0sCiAgeyBpY29uOiA8U2lQb3N0Z3Jlc3FsIHNpemU9ezE2fSAvPiwgbmFtZTogIlBvc3RncmVTUUwiIH0sCiAgeyBpY29uOiA8U2lHaXQgc2l6ZT17MTZ9IC8+LCBuYW1lOiAiR2l0ICIgfSwKXTsKCmV4cG9ydCBjb25zdCBTVEFUUzogU3RhdEl0ZW1bXSA9IFsKICB7IHZhbHVlOiAiMTIiLCBsYWJlbDogIlByb2plY3RzIiB9LAogIHsgdmFsdWU6ICIzeXIiLCBsYWJlbDogIkV4cGVyaWVuY2UiIH0sCl07CgpleHBvcnQgY29uc3QgTkFWX0lURU1TOiBOYXZJdGVtW10gPSBbCiAgeyBpY29uOiAiL2ltZy9pY29ucy9ob21lLndlYnAiLCBsYWJlbDogIkhvbWUiLCB0YWJJZDogImhvbWUiIH0sCiAgeyBpY29uOiAiL2ltZy9pY29ucy9mb2xkZXIud2VicCIsIGxhYmVsOiAiTXkgUHJvamVjdHMiLCB0YWJJZDogInByb2plY3RzIiB9LAogIHsgaWNvbjogIi9pbWcvaWNvbnMvZ2Vhci53ZWJwIiwgbGFiZWw6ICJTa2lsbHMiLCB0YWJJZDogInNraWxscyIgfSwKICB7IGljb246ICIvaW1nL2ljb25zL21haWwud2VicCIsIGxhYmVsOiAiQ29udGFjdCBNZSIsIHRhYklkOiAiY29udGFjdCIgfSwKXTsKCmV4cG9ydCBjb25zdCBUQUJTID0gWwogIHsKICAgIGlkOiAiaG9tZSIgYXMgY29uc3QsCiAgICBpY29uOiAiL2ltZy9pY29ucy9ob21lLndlYnAiLAogICAgbGFiZWw6ICJIb21lIiwKICAgIGZpbGU6ICJpbmRleC5odG1sIiwKICB9LAogIHsKICAgIGlkOiAicHJvamVjdHMiIGFzIGNvbnN0LAogICAgaWNvbjogIi9pbWcvaWNvbnMvZm9sZGVyLndlYnAiLAogICAgbGFiZWw6ICJQcm9qZWN0cyIsCiAgICBmaWxlOiAicHJvamVjdHMuaHRtbCIsCiAgfSwKICB7CiAgICBpZDogInNraWxscyIgYXMgY29uc3QsCiAgICBpY29uOiAiL2ltZy9pY29ucy9nZWFyLndlYnAiLAogICAgbGFiZWw6ICJTa2lsbHMiLAogICAgZmlsZTogInNraWxscy5odG1sIiwKICB9LAogIHsKICAgIGlkOiAiY29udGFjdCIgYXMgY29uc3QsCiAgICBpY29uOiAiL2ltZy9pY29ucy9tYWlsLndlYnAiLAogICAgbGFiZWw6ICJDb250YWN0IiwKICAgIGZpbGU6ICJjb250YWN0Lmh0bWwiLAogIH0sCl07CgpleHBvcnQgY29uc3QgRURVQ0FUSU9OID0gWwogIHsKICAgIGljb246ICIvaW1nL2ljb25zL2hvbWUud2VicCIsCiAgICB0aXRsZTogJ1VuaXZlcnNpdGFzIFBlbWJhbmd1bmFuIE5hc2lvbmFsICJWZXRlcmFuIiBKYWthcnRhJywKICAgIHN1YjogIkJhY2hlbG9yJ3MgRGVncmVlIG9mIENvbXB1dGVyIFNjaWVuY2UsIEluZm9ybWF0aWNzIHwgMjAyNSAtIFByZXNlbnQiLAogIH0sCl07CgpleHBvcnQgY29uc3QgQ09NUEVUSVRJT04gPSBbCiAgewogICAgaWNvbjogIi9pbWcvaWNvbnMvZ2Vhci53ZWJwIiwKICAgIHRpdGxlOiAiMm5kIFBsYWNlIHwgTEtTIFdlYiBUZWNobm9sb2dpZXMsIFJlZ2lvbmFsIERLSSBKYWthcnRhIiwKICAgIHN1YjogIlB1c3ByZXNuYXMgLSAyMDI0IiwKICB9LAogIHsKICAgIGljb246ICIvaW1nL2ljb25zL2dlYXIud2VicCIsCiAgICB0aXRsZTogIjJuZCBQbGFjZSB8IEFXUyBDNCBXZWIgRGVzaWduLCBSZWdpb25hbCBES0kgSmFrYXJ0YSIsCiAgICBzdWI6ICJTYWdhc2l0YXMgLSAyMDI0IiwKICB9LAogIHsKICAgIGljb246ICIvaW1nL2ljb25zL3N5c3RlbS1pbmZvcm1hdGlvbi53ZWJwIiwKICAgIHRpdGxlOiAiQmVzdCBEZXNpZ24gfCBBV1MgQzQgV2ViIERlc2lnbiwgUmVnaW9uYWwgREtJIEpha2FydGEiLAogICAgc3ViOiAiU2FnYXNpdGFzIC0gMjAyNCIsCiAgfSwKICB7CiAgICBpY29uOiAiL2ltZy9pY29ucy9nZWFyLndlYnAiLAogICAgdGl0bGU6ICIxc3QgUnVubmVyIFVwIHwgTWljcm8gSW5mbHVlbmNlciBHZXJha2FuIFNla29sYWggU2VoYXQsIE5hdGlvbmFsIiwKICAgIHN1YjogIlNhZ2FzaXRhcyAtIDIwMjQiLAogIH0sCl07Cg==
+import type { Project, Skill, NavItem, StatItem, Tools } from "@/types/types";
+import {
+  SiBun,
+  SiDocker,
+  SiGit,
+  SiLaravel,
+  SiLinear,
+  SiNextdotjs,
+  SiPostgresql,
+  SiReact,
+  SiSvelte,
+  SiTailwindcss,
+  SiThreedotjs,
+  SiVuedotjs,
+} from "@icons-pack/react-simple-icons";
+
+export const PROJECTS: Project[] = [
+  {
+    id: "9",
+    title: "BEM UPNVJ Company Profile",
+    image: "/projects/bemupnvj.webp",
+    description:
+      "Official company profile website of BEM UPNVJ, the student executive board of UPN \"Veteran\" Jakarta, serving as its public hub for organizational profile, programs, documents, press releases, and volunteer opportunities.",
+    tags: [
+      { label: "Astro", color: "green" },
+      { label: "UI/UX Design", color: "aqua" },
+    ],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://bemupnvj.id" }],
+  },
+  {
+    id: "7",
+    title: "SIERA",
+    image: "/projects/siera.png",
+    description:
+      "A comprehensive platform built for PATRIBERA that centralizes information management, simplifies participant tracking, and optimizes user registration and certification workflows.",
+    tags: [
+      { label: "React Vite+", color: "blue" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "TypeScript", color: "blue" },
+      { label: "Hono", color: "blue" },
+    ],
+    links: [{ label: "View Platform", variant: "blue", href: "https://siera.veterantech.id" }],
+  },
+  {
+    id: "1",
+    title: "Inditech Company Profile",
+    image: "/projects/inditech.webp",
+    description:
+      "A unique and interactive 3D-based company profile website for PT. Indi Technology, integrated with a day and night cycle system.",
+    tags: [
+      { label: "React", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "ThreeJS", color: "green" },
+      { label: "UI/UX Design", color: "aqua" },
+    ],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://web.indi.tech" }],
+  },
+  {
+    id: "4",
+    title: "Lombakan",
+    image: "/projects/lombakan.webp",
+    description:
+      "Lombakan is a mentoring program from KSM VeteranTech UPN Veteran Jakarta to help students prepare for GEMASTIK, technology competitions, and business competitions with experienced mentors.",
+    tags: [
+      { label: "Next.js", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+    ],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://lombakan.id" }],
+  },
+  {
+    id: "2",
+    title: "Geoportal Laut Berkah",
+    image: "/projects/geoportal.webp",
+    description:
+      "Platform related to permits for marine space utilization letters for the province of Central Kalimantan based on 3D.",
+    tags: [
+      { label: "React", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "ThreeJS", color: "green" },
+      { label: "UI/UX Design", color: "aqua" },
+    ],
+    links: [
+      { label: "Live Demo", variant: "blue", href: "https://geoportal-lautberkah.kalteng.go.id" },
+    ],
+  },
+  {
+    id: "8",
+    title: "Papualoka",
+    image: "/projects/papualoka.png",
+    description:
+      "A dedicated website built to introduce and promote the rich cultural heritage of Papua to a wider audience.",
+    tags: [
+      { label: "React", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "UI/UX Design", color: "aqua" },
+    ],
+    links: [{ label: "View Website", variant: "blue", href: "https://papualoka.id" }],
+  },
+  {
+    id: "3",
+    title: "Pesta Warna Nada",
+    image: "/projects/pwn.webp",
+    description:
+      "Landing page for a music festival event called Pesta Warna Nada, which is held annually in Jakarta.",
+    tags: [
+      { label: "React", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "ThreeJS", color: "green" },
+      { label: "UI/UX Design", color: "aqua" },
+    ],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://pestawarnanada.com" }],
+  },
+  {
+    id: "5",
+    title: "Rebellum",
+    image: "/projects/rebellum.webp",
+    description:
+      "Rebellum is a platform that provides information and solutions related to juvenile delinquency in Indonesia.",
+    tags: [
+      { label: "React", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "ThreeJS", color: "green" },
+      { label: "UI/UX Design", color: "aqua" },
+    ],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://rebellum.vercel.app" }],
+  },
+  {
+    id: "6",
+    title: "HealthySelf",
+    image: "/projects/healthyself.webp",
+    description:
+      "Platform that provides information related to maintaining a healthy lifestyle for various groups, from babies to the elderly.",
+    tags: [
+      { label: "React", color: "green" },
+      { label: "Tailwindcss", color: "blue" },
+      { label: "ThreeJS", color: "green" },
+      { label: "UI/UX Design", color: "aqua" },
+    ],
+    links: [{ label: "Live Demo", variant: "blue", href: "https://healthyself.vercel.app" }],
+  },
+];
+
+export const EXPERIENCES = [
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "PT. GRAVIX",
+    sub: "Fullstack Developer | Aug 2024 - May 2025",
+  },
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "PT. Hexagon",
+    sub: "Backend Developer Intern | Sep 2024 - Nov 2024",
+  },
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "Indi Technology",
+    sub: "Fullstack Developer Intern | Mar 2024 - Nov 2024",
+  },
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "Freelance",
+    sub: "Software Developer | Present",
+  },
+];
+
+export const PERSONAL_SKILLS: Skill[] = [
+  { label: "Indonesian Language", level: "Native", fillColor: "green" },
+  { label: "English Language", level: "Intermediate", fillColor: "blue" },
+  { label: "Problem Solving", level: "Advanced", fillColor: "purple" },
+  { label: "Team Collaboration", level: "Advanced", fillColor: "aqua" },
+];
+
+export const TOOLS: Tools[] = [
+  { icon: <SiLaravel size={16} />, name: "Laravel" },
+  { icon: <SiReact size={16} />, name: "React" },
+  { icon: <SiNextdotjs size={16} />, name: "Next.js" },
+  { icon: <SiSvelte size={16} />, name: "Svelte" },
+  { icon: <SiThreedotjs size={16} />, name: "Three.js" },
+  { icon: <SiBun size={16} />, name: "Bun" },
+  { icon: <SiVuedotjs size={16} />, name: "Vue.js" },
+  { icon: <SiDocker size={16} />, name: "Docker" },
+  { icon: <SiLinear size={16} />, name: "Linear" },
+  { icon: <SiTailwindcss size={16} />, name: "TailwindCSS" },
+  { icon: <SiPostgresql size={16} />, name: "PostgreSQL" },
+  { icon: <SiGit size={16} />, name: "Git " },
+];
+
+export const STATS: StatItem[] = [
+  { value: "12", label: "Projects" },
+  { value: "3yr", label: "Experience" },
+];
+
+export const NAV_ITEMS: NavItem[] = [
+  { icon: "/img/icons/home.webp", label: "Home", tabId: "home" },
+  { icon: "/img/icons/folder.webp", label: "My Projects", tabId: "projects" },
+  { icon: "/img/icons/gear.webp", label: "Skills", tabId: "skills" },
+  { icon: "/img/icons/mail.webp", label: "Contact Me", tabId: "contact" },
+];
+
+export const TABS = [
+  {
+    id: "home" as const,
+    icon: "/img/icons/home.webp",
+    label: "Home",
+    file: "index.html",
+  },
+  {
+    id: "projects" as const,
+    icon: "/img/icons/folder.webp",
+    label: "Projects",
+    file: "projects.html",
+  },
+  {
+    id: "skills" as const,
+    icon: "/img/icons/gear.webp",
+    label: "Skills",
+    file: "skills.html",
+  },
+  {
+    id: "contact" as const,
+    icon: "/img/icons/mail.webp",
+    label: "Contact",
+    file: "contact.html",
+  },
+];
+
+export const EDUCATION = [
+  {
+    icon: "/img/icons/home.webp",
+    title: 'Universitas Pembangunan Nasional "Veteran" Jakarta',
+    sub: "Bachelor's Degree of Computer Science, Informatics | 2025 - Present",
+  },
+];
+
+export const COMPETITION = [
+  {
+    icon: "/img/icons/gear.webp",
+    title: "2nd Place | LKS Web Technologies, Regional DKI Jakarta",
+    sub: "Puspresnas - 2024",
+  },
+  {
+    icon: "/img/icons/gear.webp",
+    title: "2nd Place | AWS C4 Web Design, Regional DKI Jakarta",
+    sub: "Sagasitas - 2024",
+  },
+  {
+    icon: "/img/icons/system-information.webp",
+    title: "Best Design | AWS C4 Web Design, Regional DKI Jakarta",
+    sub: "Sagasitas - 2024",
+  },
+  {
+    icon: "/img/icons/gear.webp",
+    title: "1st Runner Up | Micro Influencer Gerakan Sekolah Sehat, National",
+    sub: "Sagasitas - 2024",
+  },
+];
