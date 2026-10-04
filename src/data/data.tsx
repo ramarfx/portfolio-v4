@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
   {
     id: "9",
     title: "BEM UPNVJ Company Profile",
-    image: "/projects/bemupnvj.webp",
+    image: "/projects/bemupnvj.svg",
     description:
       "Official company profile website of BEM UPNVJ, the student executive board of UPN \"Veteran\" Jakarta, serving as its public hub for organizational profile, programs, documents, press releases, and volunteer opportunities.",
     tags: [
